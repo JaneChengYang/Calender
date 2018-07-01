@@ -2614,7 +2614,7 @@
                                                     <outlet property="moneyLabel" destination="q7s-KJ-HHQ" id="Ae5-gz-jDP"/>
                                                     <outlet property="myImage" destination="sGn-gw-Ng8" id="ywR-My-cEz"/>
                                                     <outlet property="userLabel" destination="IS5-Am-cbD" id="vaw-b0-qVM"/>
-                                                    <segue destination="If9-aC-P9g" kind="show" id="I8J-aF-jZh"/>
+                                                    <segue destination="If9-aC-P9g" kind="show" id="udf-Hm-KBR"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -2852,7 +2852,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-DQ-AMB">
                                 <rect key="frame" x="0.0" y="396" width="414" height="340"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VdE-tP-Snw">
                                     <size key="itemSize" width="350" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -2919,40 +2919,16 @@
                                         <connections>
                                             <outlet property="addLabel" destination="f0K-aw-sAp" id="jXU-qS-iPX"/>
                                             <outlet property="addText" destination="Ah6-y8-Bzy" id="QuO-UA-WGo"/>
+                                            <outlet property="myView" destination="TLz-KW-WrY" id="BhF-lw-rJm"/>
                                             <outlet property="userLabel" destination="WOP-An-crK" id="J0k-Ie-Mct"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="If9-aC-P9g" id="846-ww-SwF"/>
                                     <outlet property="delegate" destination="If9-aC-P9g" id="cRq-Pd-gWv"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRO-yS-YAs">
-                                <rect key="frame" x="265" y="328" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.34901960780000002" green="0.3411764706" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Aqr-9I-mXX"/>
-                                    <constraint firstAttribute="width" constant="60" id="FVj-e3-NA0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="修改">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="accountButton:" destination="Ctf-er-ZGW" eventType="touchUpInside" id="Ee5-JH-9eg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loo-O7-6U3">
                                 <rect key="frame" x="334" y="328" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.77930909400000004" green="0.31158894079999999" blue="0.30771292750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2992,7 +2968,18 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="returnButton:" destination="If9-aC-P9g" eventType="touchUpInside" id="sKm-o0-yUp"/>
+                                </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-AA-iek" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
+                                <rect key="frame" x="20" y="685" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.77930909400000004" green="0.31158894079999999" blue="0.30771292750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="mySwitch:" destination="If9-aC-P9g" eventType="valueChanged" id="DSy-ER-8qu"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -3000,14 +2987,12 @@
                             <constraint firstItem="9sD-DQ-AMB" firstAttribute="leading" secondItem="cxQ-wa-Atf" secondAttribute="leading" id="4W1-MI-GUo"/>
                             <constraint firstItem="9sD-DQ-AMB" firstAttribute="trailing" secondItem="cxQ-wa-Atf" secondAttribute="trailing" id="5EE-7L-zyk"/>
                             <constraint firstItem="qso-5f-kZb" firstAttribute="trailing" secondItem="cxQ-wa-Atf" secondAttribute="trailing" id="9Yo-b9-d9Z"/>
-                            <constraint firstItem="loo-O7-6U3" firstAttribute="leading" secondItem="aRO-yS-YAs" secondAttribute="trailing" constant="9" id="Cfg-qm-Obz"/>
                             <constraint firstItem="6qC-Vr-vC8" firstAttribute="top" secondItem="9sD-DQ-AMB" secondAttribute="bottom" constant="-424" id="FG6-MA-7as"/>
                             <constraint firstItem="9sD-DQ-AMB" firstAttribute="top" secondItem="qso-5f-kZb" secondAttribute="bottom" constant="35" id="GKS-2M-SMO"/>
                             <constraint firstItem="9sD-DQ-AMB" firstAttribute="bottom" secondItem="cxQ-wa-Atf" secondAttribute="bottom" id="GOC-hV-qsv"/>
                             <constraint firstItem="cxQ-wa-Atf" firstAttribute="trailing" secondItem="loo-O7-6U3" secondAttribute="trailing" constant="20" id="GbD-43-Bpf"/>
                             <constraint firstItem="6qC-Vr-vC8" firstAttribute="leading" secondItem="cxQ-wa-Atf" secondAttribute="leading" constant="20" id="Oae-BE-YXW"/>
                             <constraint firstItem="XD2-iB-9Ze" firstAttribute="leading" secondItem="cxQ-wa-Atf" secondAttribute="leading" constant="8" id="TmT-Rh-keq"/>
-                            <constraint firstItem="aRO-yS-YAs" firstAttribute="top" secondItem="cxQ-wa-Atf" secondAttribute="top" constant="308" id="YAM-de-Ep4"/>
                             <constraint firstItem="6qC-Vr-vC8" firstAttribute="top" secondItem="XD2-iB-9Ze" secondAttribute="bottom" constant="227" id="hR8-nA-O33"/>
                             <constraint firstItem="qso-5f-kZb" firstAttribute="top" secondItem="y6w-Zm-Fbx" secondAttribute="top" id="k9r-Hc-BhQ"/>
                             <constraint firstItem="XD2-iB-9Ze" firstAttribute="top" secondItem="cxQ-wa-Atf" secondAttribute="top" constant="25" id="kVc-jY-nV6"/>
@@ -3016,10 +3001,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cxQ-wa-Atf"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="6qC-Vr-vC8" id="m9H-Zn-lQC"/>
+                        <outlet property="isSwitch" destination="8bP-AA-iek" id="98l-3F-k9C"/>
+                        <outlet property="myButton" destination="loo-O7-6U3" id="yeN-Ic-xCw"/>
+                        <outlet property="myCollection" destination="9sD-DQ-AMB" id="kUO-Z7-LJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dp-Ks-m7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="2380"/>
+            <point key="canvasLocation" x="2660.8695652173915" y="2379.6195652173915"/>
         </scene>
     </scenes>
     <resources>

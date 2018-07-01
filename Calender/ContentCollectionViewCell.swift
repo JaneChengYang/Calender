@@ -10,6 +10,7 @@ import UIKit
 
 class ContentCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var myView: UIView!
     @IBOutlet weak var addLabel: UILabel!
     @IBOutlet weak var addText: UITextField!
     @IBOutlet weak var userLabel: UILabel!
