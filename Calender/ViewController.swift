@@ -12,6 +12,7 @@ import CoreData
 
 class ViewController: UIViewController{
     @IBOutlet weak var totalLabel: UILabel!
+    var diary = [User]()
     
 //    @IBAction func isSwitch(_ sender: UISwitch) {
 //        if mySwitch.isOn == true{
@@ -50,21 +51,21 @@ class ViewController: UIViewController{
     
     //返回頁面
     @IBAction func unwind(segue:UIStoryboardSegue){
-        let source = segue.source as? FFTableViewController
-        if let tota = source?.unwindTotal,let user = source?.user,let row = calenderView.indexPathsForSelectedItems?.first?.item{
-        //if let user = source?.moneys,let total = source?.unwindTotal{
-        print(tota)
-            if tota != 0{
-                //做到要把陣列回傳回來
-                self.user = [user]
-                //Use.saveToFile(use: user)
-                calenderTotal = tota
-                calenderView.reloadData()
-                print(calenderTotal)
-                //print("moneys\(self.moneys[0].money)")
-                
-            }
-        }
+//        let source = segue.source as? FFTableViewController
+//        if let tota = source?.unwindTotal,let user = source?.user,let row = calenderView.indexPathsForSelectedItems?.first?.item{
+//        //if let user = source?.moneys,let total = source?.unwindTotal{
+//        print(tota)
+//            if tota != 0{
+//                //做到要把陣列回傳回來
+//                self.user = [user]
+//                //Use.saveToFile(use: user)
+//                calenderTotal = tota
+//                calenderView.reloadData()
+//                print(calenderTotal)
+//                //print("moneys\(self.moneys[0].money)")
+//
+//            }
+//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,26 +157,41 @@ extension ViewController:JTAppleCalendarViewDelegate{
        //guard let validCell =  calendar as? CustomCell else{return}
         formatter.dateFormat = "yyyy/MM/dd"
         //判斷是新增還是編輯
-        for i in 0..<user.count{
-            if date.compare(user[i].date!) == .orderedSame{
-                if user[i].total != 0{
-                    guard let controllet = storyboard?.instantiateViewController(withIdentifier: "aa") as? UpdatedTableViewController else{return}
-                    //把我點選的日期傳出去
-                    controllet.date = formatter.string(from: date)
-                    controllet.user = user[i]
+//        for i in 0..<user.count{
+//            if date.compare(user[i].date!) == .orderedSame{
+//                if user[i].total != 0{
+//                    guard let controllet = storyboard?.instantiateViewController(withIdentifier: "aa") as? UpdatedTableViewController else{return}
+//                    //把我點選的日期傳出去
+//                    controllet.date = formatter.string(from: date)
+//                    controllet.user = user[i]
+//                    cell?.bounce()
+//                    handleCellTextColor(view: cell, cellState: cellState)
+//                    handleCellSelected(view: cell, cellState: cellState)
+//                    present(controllet, animated: true, completion: nil)
+//                    break
+//                }
+//            }
+//        }
+        for i in 0..<diary.count{
+            if date.compare(diary[i].diary.date!) == .orderedSame{
+                if diary[i].diary.diary != ""{
+                    guard let controller = storyboard?.instantiateViewController(withIdentifier: "diary") as? DiaryViewController else{fatalError()}
+                  controller.date = formatter.string(from: date)
+                    controller.diarys = diary[i]
                     cell?.bounce()
                     handleCellTextColor(view: cell, cellState: cellState)
                     handleCellSelected(view: cell, cellState: cellState)
-                    present(controllet, animated: true, completion: nil)
+                    present(controller, animated: true, completion: nil)
                     break
                 }
             }
         }
        
-        guard let controllet = storyboard?.instantiateViewController(withIdentifier: "bb") as? FFTableViewController else{return}
+//        guard let controllet = storyboard?.instantiateViewController(withIdentifier: "bb") as? FFTableViewController else{return}
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: "addDiary") as? AddDiaryViewController else{fatalError()}
         //把我點選的日期傳出去
-        controllet.date = formatter.string(from: date)
-        present(controllet, animated: true, completion: nil)
+        controller.date = formatter.string(from: date)
+        present(controller, animated: true, completion: nil)
         cell?.bounce()
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellSelected(view: cell, cellState: cellState)
@@ -240,7 +256,7 @@ extension ViewController:JTAppleCalendarViewDelegate{
     //設定日曆 滾動日曆
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
 //        setupViewsOfCalender(from: visibleDates)
-        var sum:Int64 = 0
+//        var sum:Int64 = 0
 //       for i in 0..<user.count{
 //            let calendar = Calendar.current
 //            let components = calendar.dateComponents([.year, .month], from: user[i].date!)
@@ -257,27 +273,27 @@ extension ViewController:JTAppleCalendarViewDelegate{
 //            //break
 //        }
 //            print(components.year, components.month,components.day,components.date)
-//            }
-        let date = visibleDates.outdates.first?.date
-        let components = Calendar.current.dateComponents(in: TimeZone(abbreviation: "GMT")!, from: date!)
-        print(components.year, components.month)
-        for i in 0..<user.count{
-                 if components.year == 2018 && components.month == 5{
-                    sum = 0
-                    sum += user[i].total
-                    totalLabel.text = String(sum)
-                    self.reloadInputViews()
-                    //break
-                 }
-                if components.year == 2018 && components.month == 6{
-                    sum = 0
-                    sum += user[i].total
-                    totalLabel.text = String(sum)
-                    self.reloadInputViews()
-                    //break
-                }
-        }
-        
+//           }
+//        let date = visibleDates.outdates.first?.date
+//        let components = Calendar.current.dateComponents(in: TimeZone(abbreviation: "GMT")!, from: date!)
+//        print(components.year, components.month)
+//        for i in 0..<user.count{
+//                 if components.year == 2018 && components.month == 5{
+//                    sum = 0
+//                    sum += user[i].total
+//                    totalLabel.text = String(sum)
+//                    self.reloadInputViews()
+//                    //break
+//                 }
+//                if components.year == 2018 && components.month == 6{
+//                    sum = 0
+//                    sum += user[i].total
+//                    totalLabel.text = String(sum)
+//                    self.reloadInputViews()
+//                    //break
+//                }
+//        }
+//
         setupViewsOfCalender(from: visibleDates)
         }
     }

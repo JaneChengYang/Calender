@@ -1700,7 +1700,7 @@
         <!--Diary View Controller-->
         <scene sceneID="JIX-cB-P0N">
             <objects>
-                <viewController id="Ctf-er-ZGW" customClass="DiaryViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="diary" id="Ctf-er-ZGW" customClass="DiaryViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gh0-BS-9oD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1887,7 +1887,7 @@
         <!--Add Diary View Controller-->
         <scene sceneID="R0K-bA-lZu">
             <objects>
-                <viewController storyboardIdentifier="add" id="c7h-Ll-YmW" customClass="AddDiaryViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addDiary" id="c7h-Ll-YmW" customClass="AddDiaryViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXD-7h-NN4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2488,7 +2488,7 @@
         <!--Account View Controller-->
         <scene sceneID="ONw-US-w8b">
             <objects>
-                <viewController id="N8I-wo-zVg" customClass="AccountViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="acc" id="N8I-wo-zVg" customClass="AccountViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VhA-WW-4ti">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2670,7 +2670,7 @@
         <!--Add Acc View Controller-->
         <scene sceneID="kIe-V9-ygy">
             <objects>
-                <viewController id="MgH-EL-DH4" customClass="AddAccViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addAcc" id="MgH-EL-DH4" customClass="AddAccViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpf-bp-T52">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

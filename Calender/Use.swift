@@ -1,4 +1,3 @@
-//
 //  Use.swift
 //  Calender
 //
@@ -7,10 +6,12 @@
 //
 
 import Foundation
+
 struct Use:Codable{
     var use:String?
     var money = ""
 }
+
 struct User{
     var diary:DiaryUser
     var userMoney = [Total]()

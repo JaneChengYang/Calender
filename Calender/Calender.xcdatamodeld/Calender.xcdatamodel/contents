@@ -34,8 +34,8 @@
         <attribute name="traggic" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DiaryUser" positionX="-45" positionY="117" width="128" height="135"/>
-        <element name="Users" positionX="-45" positionY="0" width="128" height="285"/>
-        <element name="Total" positionX="-45" positionY="144" width="128" height="120"/>
+        <element name="DiaryUser" positionX="-51.21484375" positionY="-118.203125" width="128" height="135"/>
+        <element name="Total" positionX="-49.203125" positionY="106.8828125" width="128" height="120"/>
+        <element name="Users" positionX="-342.55859375" positionY="-32.45703125" width="125.82421875" height="285"/>
     </elements>
 </model>
