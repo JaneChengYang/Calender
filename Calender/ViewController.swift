@@ -12,7 +12,7 @@ import CoreData
 
 class ViewController: UIViewController{
     @IBOutlet weak var totalLabel: UILabel!
-    var diary = [User]()
+    var diary = [DiaryUser]()
     
 //    @IBAction func isSwitch(_ sender: UISwitch) {
 //        if mySwitch.isOn == true{
@@ -77,16 +77,15 @@ class ViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(user.count)
+        print(diary.count)
         //讀檔
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-            let users:NSFetchRequest<Users> = Users.fetchRequest()
+            let users:NSFetchRequest<DiaryUser> = DiaryUser.fetchRequest()
             let context = appDelegate.persistentContainer.viewContext
             do{
-                user = try context.fetch(users)
+                diary = try context.fetch(users)
                 calenderView.reloadData()
             }catch{
-                
             }
         }
     }
@@ -172,12 +171,13 @@ extension ViewController:JTAppleCalendarViewDelegate{
 //                }
 //            }
 //        }
+        
         for i in 0..<diary.count{
-            if date.compare(diary[i].diary.date!) == .orderedSame{
-                if diary[i].diary.diary != ""{
+            if date.compare(diary[i].date!) == .orderedSame{
+                if diary[i].diary != ""{
                     guard let controller = storyboard?.instantiateViewController(withIdentifier: "diary") as? DiaryViewController else{fatalError()}
                   controller.date = formatter.string(from: date)
-                    controller.diarys = diary[i]
+                    controller.diary = diary[i]
                     cell?.bounce()
                     handleCellTextColor(view: cell, cellState: cellState)
                     handleCellSelected(view: cell, cellState: cellState)
@@ -236,9 +236,9 @@ extension ViewController:JTAppleCalendarViewDelegate{
 //            }
 //        }
         cell.totalView.isHidden = true
-            for i in 0..<user.count{
-                if date.compare(user[i].date!) == .orderedSame{
-                    if user[i].total != 0{
+            for i in 0..<diary.count{
+                if date.compare(diary[i].date!) == .orderedSame{
+                    if diary[i].diary != ""{
                         cell.totalView.isHidden = false
                         break
                     }

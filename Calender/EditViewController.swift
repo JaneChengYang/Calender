@@ -1,15 +1,15 @@
 //
-//  AddDiaryViewController.swift
+//  EditViewController.swift
 //  Calender
 //
-//  Created by Simon on 2018/6/28.
+//  Created by Simon on 2018/7/6.
 //  Copyright © 2018年 Simon. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var diary:DiaryUser?
     var moodString = ""
     var weatherString = ""
@@ -22,19 +22,19 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         //收鍵盤
         view.endEditing(true)
-                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-                alertController.addAction(UIAlertAction(title: "拍照", style: .default, handler: { (alerAction) in
-                    self.photograph()
-                }))
-                alertController.addAction(UIAlertAction(title: "從相簿選照片", style: .default, handler: { (alerAction) in
-                    let imagePickerController = UIImagePickerController()
-                    imagePickerController.sourceType = .photoLibrary
-                    imagePickerController.delegate = self
-                    imagePickerController.allowsEditing = true
-                    self.present(imagePickerController, animated: true, completion: nil)
-                }))
-                alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-                present(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "拍照", style: .default, handler: { (alerAction) in
+            self.photograph()
+        }))
+        alertController.addAction(UIAlertAction(title: "從相簿選照片", style: .default, handler: { (alerAction) in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.delegate = self
+            imagePickerController.allowsEditing = true
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
@@ -54,32 +54,64 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
     @IBOutlet weak var noteText: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBAction func returnButton(_ sender: UIButton) {
-         dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func myButton(_ sender: UIButton) {
         if noteText.text == ""{
-         let alertController = UIAlertController(title: "錯誤", message: "紀錄您的一天吧", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "錯誤", message: "紀錄您的一天吧", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }else{
+//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+//
+//                do{
+//                    diary = try context.fetch(users)
+//                    calenderView.reloadData()
+//                }catch{
+//                }
+//            }
+            //更新
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-                diary = DiaryUser(context: appDelegate.persistentContainer.viewContext)
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy/MM/dd"
-                let date = dateFormatter.date(from: dateLabel.text!)
-                diary?.date = date
-                diary?.diaryLabel = diaryText.text
-                diary?.diary = noteText.text
-                diary?.mood = moodString
-                diary?.weather = weatherString
-                if let diaryImage = myImage.image{
-                    if let imageData = UIImagePNGRepresentation(diaryImage){
-                        diary?.diaryImage = NSData(data:imageData) as Data
+                let result = NSFetchRequest<NSFetchRequestResult>(entityName: "DiaryUser")
+                let context = appDelegate.persistentContainer.viewContext
+                do{
+                    let results = try context.fetch(result)
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy/MM/dd"
+                    let date = dateFormatter.date(from: dateLabel.text!)
+                    diary?.date = date
+                    diary?.diaryLabel = diaryText.text
+                    diary?.diary = noteText.text
+                    diary?.mood = moodString
+                    diary?.weather = weatherString
+                    if let diaryImage = myImage.image{
+                        if let imageData = UIImagePNGRepresentation(diaryImage){
+                            diary?.diaryImage = NSData(data:imageData) as Data
+                        }
                     }
+                    appDelegate.saveContext()
+                }catch{
+                    
                 }
-                appDelegate.saveContext()
+//                let users:NSFetchRequest<DiaryUser> = DiaryUser.fetchRequest()
+//let context = appDelegate.persistentContainer.viewContext
+//                diary = DiaryUser(context: appDelegate.persistentContainer.viewContext)
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy/MM/dd"
+//                let date = dateFormatter.date(from: dateLabel.text!)
+//                diary?.date = date
+//                diary?.diaryLabel = diaryText.text
+//                diary?.diary = noteText.text
+//                diary?.mood = moodString
+//                diary?.weather = weatherString
+//                if let diaryImage = myImage.image{
+//                    if let imageData = UIImagePNGRepresentation(diaryImage){
+//                        diary?.diaryImage = NSData(data:imageData) as Data
+//                    }
+//                }
+                //appDelegate.saveContext()
             }
-            dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func mood1Button(_ sender: UIButton) {
@@ -97,10 +129,10 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
             moodImage.image = UIImage(named: "25")
             moodString = "25"
         }else if sender.tag == 4{
-           moodImage.image = UIImage(named: "26")
+            moodImage.image = UIImage(named: "26")
             moodString = "26"
         }else if sender.tag == 5{
-           moodImage.image = UIImage(named: "27")
+            moodImage.image = UIImage(named: "27")
             moodString = "27"
         }else if sender.tag == 6{
             moodImage.image = UIImage(named: "28")
@@ -127,7 +159,7 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
             moodImage.image = UIImage(named: "35")
             moodString = "35"
         }else if sender.tag == 14{
-           moodImage.image = UIImage(named: "36")
+            moodImage.image = UIImage(named: "36")
             moodString = "36"
         }else if sender.tag == 15{
             moodImage.image = UIImage(named: "38")
@@ -198,27 +230,64 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
             dateLabel.text = date
         }
         if let diary = diary{
-            if let image = diary.diaryImage{
-             myImage.image = UIImage(data: image)
-            }else{
-                myImage.image = UIImage(named: "4")
-            }
             diaryText.text = diary.diaryLabel
-            moodImage.image = UIImage(named: diary.mood!)
-            weatherImage.image = UIImage(named: diary.weather!)
+            if let weatherImage = diary.weather{
+                if weatherImage == ""{
+                    self.weatherImage.image = UIImage(named: "18")
+                }else{
+                    self.weatherImage.image = UIImage(named: weatherImage)
+                }
+            }
+            if let moodImage = diary.mood{
+                if moodImage == ""{
+                    self.moodImage.image = UIImage(named: "23")
+                }else{
+                    self.moodImage.image = UIImage(named:moodImage)
+                }
+            }
+            if diary.diaryImage == nil{
+                myImage.image = UIImage(named:"4")
+                myImage.contentMode = .center
+            }else if diary.diaryImage != nil{
+                myImage.image = UIImage(data: diary.diaryImage!)
+                myImage.contentMode = .scaleToFill
+            }
             noteText.text = diary.diary
         }
+//        if let date = date{
+//            dateLabel.text = date
+//        }
+//        if let diary = diary{
+//            if let image = diary.diaryImage{
+//                myImage.image = UIImage(data: image)
+//                myImage.contentMode = .scaleToFill
+//            }else{
+//                myImage.image = UIImage(named: "4")
+//                myImage.contentMode = .center
+//            }
+//            diaryText.text = diary.diaryLabel
+//            moodImage.image = UIImage(named: diary.mood!)
+//            weatherImage.image = UIImage(named: diary.weather!)
+//            noteText.text = diary.diary
+//        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let diaryImage = myImage.image{
+//            if let imageData = UIImagePNGRepresentation(diaryImage){
+//                diary?.diaryImage = NSData(data:imageData) as Data
+//            }
+//        }
+//        diary?.diaryLabel = diaryText.text ?? ""
+//        diary?.mood = moodString
+//        diary?.weather = weatherString
+//        diary?.diary = noteText.text
+     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        if let diary = diary{
+//            if let image = diary.diaryImage{
+//                myImage.image = UIImage(data: image)
+//                myImage.contentMode = .scaleToFill
+//            }
     }
-    */
-
 }

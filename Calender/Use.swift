@@ -14,5 +14,5 @@ struct Use:Codable{
 
 struct User{
     var diary:DiaryUser
-    var userMoney = [Total]()
+    var userMoney = [TotalUser]()
 }

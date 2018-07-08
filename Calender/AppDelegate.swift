@@ -14,9 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let managedObjectContext = persistentContainer.viewContext
+//        
+//        let diaryUser = DiaryUser(context: managedObjectContext)
+//        
+//        let totalUser = TotalUser(context: managedObjectContext)
+//         let user = TotalUser(context: managedObjectContext)
+        
+        
+        
         return true
     }
     
@@ -74,7 +82,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
+//    func addTotal(total:[TotalUser]) -> [TotalUser]{
+//        var a = [1,2,3,4]
+//        
+//        return
+//    }
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -90,4 +102,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-
+//extension DiaryUser {
+//    
+//    @objc(addUsersObject:)
+//    @NSManaged public func addToUser(_ value: TotalUser)
+//    
+//    @objc(removeUsersObject:)
+//    @NSManaged public func removeFromUser(_ value: TotalUser)
+//    
+//    @objc(addUsers:)
+//    @NSManaged public func addToUsers(_ values: NSSet)
+//    
+//    @objc(removeUsers:)
+//    @NSManaged public func removeFromUsers(_ values: NSSet)
+//    
+//}
+//extension TotalUser {
+//    
+//    @objc(addUsersObject:)
+//    @NSManaged public func addToUser(_ value: DiaryUser)
+//    
+//    @objc(removeUsersObject:)
+//    @NSManaged public func removeFromUser(_ value: DiaryUser)
+//    
+//    @objc(addUsers:)
+//    @NSManaged public func addToUsers(_ values: NSSet)
+//    
+//    @objc(removeUsers:)
+//    @NSManaged public func removeFromUsers(_ values: NSSet)
+//    
+//}
+//

@@ -8,9 +8,13 @@
 
 import UIKit
 import BubbleTransition
+import CoreData
 
 class AccountViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIViewControllerTransitioningDelegate{
+    var diary:DiaryUser?
+    var date:String?
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBAction func diaryButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -18,7 +22,11 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return image.count
+        if diary?.totalUser?.count != nil{
+            return (diary?.totalUser?.count)!
+        }else{
+            return 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? AccountCollectionViewCell else{fatalError()}
@@ -43,7 +51,9 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
     var image = [UIImage(named: "1"),UIImage(named: "2"),UIImage(named: "3")]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let date = date{
+            dateLabel.text = date
+        }
         // Do any additional setup after loading the view.
     }
 //    //特效按鈕
@@ -73,16 +83,11 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
 //        transition.bubbleColor = addButton.backgroundColor!
 //        return transition
 //    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destination as? AddAccountViewController{
+            controller.date = dateLabel.text
+        }
     }
-    */
+    
 
 }
