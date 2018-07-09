@@ -114,7 +114,7 @@ class ViewController: UIViewController{
             }
         }
     }
-    //判斷cell有沒有值，有的話反灰  是不是選到的日期，是的會反黃
+    //是不是選到的日期，是的會反黃
     func handleCellSelected(view: JTAppleCell?, cellState:CellState){
         guard let validCell =  view as? CustomCell else{return}
         if validCell.isSelected{

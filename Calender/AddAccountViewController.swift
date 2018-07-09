@@ -11,6 +11,7 @@ import CoreData
 
 class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var diary:DiaryUser?
+    var total:TotalUser?
     var date:String?
 
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
         if let date = date{
             dateLabel.text = date
         }
+        print("ok\(diary)")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,34 +63,23 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }else{
-//            //更新
-//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-//                
-//            }
-//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-//                let result = NSFetchRequest<NSFetchRequestResult>(entityName: "DiaryUser")
-//                let context = appDelegate.persistentContainer.viewContext
-//                do{
-//                    let results = try context.fetch(result)
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "yyyy/MM/dd"
-//                    let date = dateFormatter.date(from: dateLabel.text!)
-//
-//                    diary?.totalUser.add
-//                    diary?.date = date
-//                    diary?.diaryLabel = diaryText.text
-//                    diary?.diary = noteText.text
-//                    diary?.mood = moodString
-//                    diary?.weather = weatherString
-//                    if let diaryImage = myImage.image{
-//                        if let imageData = UIImagePNGRepresentation(diaryImage){
-//                            diary?.diaryImage = NSData(data:imageData) as Data
-//                        }
-//                    }
-//                    appDelegate.saveContext()
-//                }catch{
-//                }
-//            }
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                 total = TotalUser(context: appDelegate.persistentContainer.viewContext)
+        let context = appDelegate.persistentContainer.viewContext
+                total?.user = userText.text ?? ""
+                total?.monay = moneyText.text ?? ""
+                total?.note = noteText.text ?? ""
+                if let diaryImage = myImage.image{
+                    if let imageData = UIImagePNGRepresentation(diaryImage){
+                        total?.accImage = NSData(data:imageData) as Data
+                    }
+                }
+                let to = total
+                print("YA\(to)")
+                diary?.addToTotalUser(to!)
+                appDelegate.saveContext()
+            }
+            
             dismiss(animated: true, completion: nil)
         }
         

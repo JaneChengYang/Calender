@@ -12,8 +12,11 @@ import CoreData
 
 class AccountViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIViewControllerTransitioningDelegate{
     var diary:DiaryUser?
+    var total:TotalUser?
     var date:String?
     
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var myCollection: UICollectionView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBAction func diaryButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -56,6 +59,17 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
         }
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myCollection.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "ee"){
+            
+            present(controller, animated: true, completion: nil)
+                }
+    }
+    
 //    //特效按鈕
 //    @IBOutlet weak var addButton: UIButton!
 //    let transition = BubbleTransition()
@@ -86,6 +100,7 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? AddAccountViewController{
             controller.date = dateLabel.text
+            controller.diary = self.diary
         }
     }
     
