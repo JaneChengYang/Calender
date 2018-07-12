@@ -29,8 +29,6 @@ class ViewController: UIViewController{
     //判斷滾動時total用
     var scroll:Int64 = 0
     var user = [Users]()
-    //var moneys = [Moneny]()
-    var use = [Use]()
     var calenderTotal = 0
     let todaysDate = Date()
     let formatter = DateFormatter()
@@ -51,21 +49,6 @@ class ViewController: UIViewController{
     
     //返回頁面
     @IBAction func unwind(segue:UIStoryboardSegue){
-//        let source = segue.source as? FFTableViewController
-//        if let tota = source?.unwindTotal,let user = source?.user,let row = calenderView.indexPathsForSelectedItems?.first?.item{
-//        //if let user = source?.moneys,let total = source?.unwindTotal{
-//        print(tota)
-//            if tota != 0{
-//                //做到要把陣列回傳回來
-//                self.user = [user]
-//                //Use.saveToFile(use: user)
-//                calenderTotal = tota
-//                calenderView.reloadData()
-//                print(calenderTotal)
-//                //print("moneys\(self.moneys[0].money)")
-//
-//            }
-//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

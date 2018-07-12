@@ -11,21 +11,15 @@
 		F420E11520B3091600C6B90C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420E11420B3091600C6B90C /* CustomCell.swift */; };
 		F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48820E520EA000E159E /* DiaryViewController.swift */; };
 		F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */; };
-		F42BC48D20E5341A000E159E /* AddAccViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48C20E5341A000E159E /* AddAccViewController.swift */; };
-		F42BC48F20E53435000E159E /* AddAccCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48E20E53435000E159E /* AddAccCollectionViewCell.swift */; };
-		F430C48820C3ADDE00D8A3C8 /* Use.swift in Sources */ = {isa = PBXBuildFile; fileRef = F430C48720C3ADDE00D8A3C8 /* Use.swift */; };
 		F439407F20B3044900662113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439407E20B3044900662113 /* AppDelegate.swift */; };
 		F439408120B3044900662113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439408020B3044900662113 /* ViewController.swift */; };
 		F439408420B3044900662113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F439408220B3044900662113 /* Main.storyboard */; };
 		F439408620B3044A00662113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F439408520B3044A00662113 /* Assets.xcassets */; };
 		F439408920B3044A00662113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F439408720B3044A00662113 /* LaunchScreen.storyboard */; };
-		F43AA75020C037AA00C63EEE /* FFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43AA74F20C037AA00C63EEE /* FFTableViewController.swift */; };
-		F45AED9D20D6B4EC00F4FD23 /* UpdatedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45AED9C20D6B4EC00F4FD23 /* UpdatedTableViewController.swift */; };
+		F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45924EE20F3B00900DF434B /* ContentViewController.swift */; };
 		F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */; };
 		F460AB0720E2891F00676EC2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0620E2891F00676EC2 /* AccountViewController.swift */; };
 		F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F475FCA420F1FA4500824659 /* AddAccountViewController.swift */; };
-		F47C4D6F20E8E108004FA1DF /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C4D6E20E8E108004FA1DF /* ContentCollectionViewCell.swift */; };
-		F47C4D7120E8E11B004FA1DF /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C4D7020E8E11B004FA1DF /* ContentViewController.swift */; };
 		F487E5F420B701E3005F8AC1 /* crayon_1-1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F487E5F320B701E3005F8AC1 /* crayon_1-1.ttf */; };
 		F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E4652F20D0C52900948CEA /* Calender.xcdatamodeld */; };
 		F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */; };
@@ -38,9 +32,6 @@
 		F420E11420B3091600C6B90C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F42BC48820E520EA000E159E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
-		F42BC48C20E5341A000E159E /* AddAccViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccViewController.swift; sourceTree = "<group>"; };
-		F42BC48E20E53435000E159E /* AddAccCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccCollectionViewCell.swift; sourceTree = "<group>"; };
-		F430C48720C3ADDE00D8A3C8 /* Use.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Use.swift; sourceTree = "<group>"; };
 		F439407B20B3044900662113 /* Calender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439407E20B3044900662113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F439408020B3044900662113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,13 +39,10 @@
 		F439408520B3044A00662113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F439408820B3044A00662113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F439408A20B3044A00662113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F43AA74F20C037AA00C63EEE /* FFTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTableViewController.swift; sourceTree = "<group>"; };
-		F45AED9C20D6B4EC00F4FD23 /* UpdatedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedTableViewController.swift; sourceTree = "<group>"; };
+		F45924EE20F3B00900DF434B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		F460AB0620E2891F00676EC2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F475FCA420F1FA4500824659 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
-		F47C4D6E20E8E108004FA1DF /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
-		F47C4D7020E8E11B004FA1DF /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F487E5F320B701E3005F8AC1 /* crayon_1-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "crayon_1-1.ttf"; path = "../../../字型/crayonfont/crayon_1-1.ttf"; sourceTree = "<group>"; };
 		F4E4653020D0C52A00948CEA /* Calender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calender.xcdatamodel; sourceTree = "<group>"; };
 		F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -115,19 +103,13 @@
 				F439408220B3044900662113 /* Main.storyboard */,
 				F475FCA420F1FA4500824659 /* AddAccountViewController.swift */,
 				F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */,
-				F47C4D6E20E8E108004FA1DF /* ContentCollectionViewCell.swift */,
-				F47C4D7020E8E11B004FA1DF /* ContentViewController.swift */,
-				F42BC48C20E5341A000E159E /* AddAccViewController.swift */,
-				F42BC48E20E53435000E159E /* AddAccCollectionViewCell.swift */,
+				F45924EE20F3B00900DF434B /* ContentViewController.swift */,
 				F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */,
 				F42BC48820E520EA000E159E /* DiaryViewController.swift */,
 				F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */,
 				F460AB0620E2891F00676EC2 /* AccountViewController.swift */,
 				F420E11420B3091600C6B90C /* CustomCell.swift */,
 				F439408020B3044900662113 /* ViewController.swift */,
-				F43AA74F20C037AA00C63EEE /* FFTableViewController.swift */,
-				F45AED9C20D6B4EC00F4FD23 /* UpdatedTableViewController.swift */,
-				F430C48720C3ADDE00D8A3C8 /* Use.swift */,
 				F439408520B3044A00662113 /* Assets.xcassets */,
 				F439408720B3044A00662113 /* LaunchScreen.storyboard */,
 				F439408A20B3044A00662113 /* Info.plist */,
@@ -254,21 +236,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F439408120B3044900662113 /* ViewController.swift in Sources */,
-				F430C48820C3ADDE00D8A3C8 /* Use.swift in Sources */,
-				F47C4D6F20E8E108004FA1DF /* ContentCollectionViewCell.swift in Sources */,
 				F420E11520B3091600C6B90C /* CustomCell.swift in Sources */,
+				F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */,
 				F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */,
 				F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */,
-				F45AED9D20D6B4EC00F4FD23 /* UpdatedTableViewController.swift in Sources */,
 				F439407F20B3044900662113 /* AppDelegate.swift in Sources */,
 				F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */,
 				F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */,
 				F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */,
-				F42BC48D20E5341A000E159E /* AddAccViewController.swift in Sources */,
-				F47C4D7120E8E11B004FA1DF /* ContentViewController.swift in Sources */,
 				F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */,
-				F42BC48F20E53435000E159E /* AddAccCollectionViewCell.swift in Sources */,
-				F43AA75020C037AA00C63EEE /* FFTableViewController.swift in Sources */,
 				F460AB0720E2891F00676EC2 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

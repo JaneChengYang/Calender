@@ -74,12 +74,10 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
                         total?.accImage = NSData(data:imageData) as Data
                     }
                 }
-                let to = total
-                print("YA\(to)")
-                diary?.addToTotalUser(to!)
+                total?.setValue(diary, forKey: "diaryUser")
+                //diary?.addToTotalUser(total!)
                 appDelegate.saveContext()
             }
-            
             dismiss(animated: true, completion: nil)
         }
         

@@ -108,33 +108,5 @@ class DiaryViewController: UIViewController,UIViewControllerTransitioningDelegat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let date = date{
-            myLabel.text = date
-        }
-        if let diary = diary{
-            diaryWeatherLabel.text = diary.diaryLabel
-            if let weatherImage = diary.weather{
-                if weatherImage == ""{
-                    self.weatherImage.image = UIImage(named: "18")
-                }else{
-                    self.weatherImage.image = UIImage(named: weatherImage)
-                }
-            }
-            if let moodImage = diary.mood{
-                if moodImage == ""{
-                    self.moodImage.image = UIImage(named: "23")
-                }else{
-                      self.moodImage.image = UIImage(named:moodImage)
-                }
-            }
-            if diary.diaryImage == nil{
-                    myImage.image = UIImage(named:"4")
-                    myImage.contentMode = .center
-            }else if diary.diaryImage != nil{
-                myImage.image = UIImage(data: diary.diaryImage!)
-                myImage.contentMode = .scaleToFill
-            }
-            diaryTextView.text = diary.diary
-        }
     }
 }

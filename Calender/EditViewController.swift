@@ -62,14 +62,6 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }else{
-//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-//
-//                do{
-//                    diary = try context.fetch(users)
-//                    calenderView.reloadData()
-//                }catch{
-//                }
-//            }
             //更新
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
                 let result = NSFetchRequest<NSFetchRequestResult>(entityName: "DiaryUser")
@@ -93,25 +85,7 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
                 }catch{
                     
                 }
-//                let users:NSFetchRequest<DiaryUser> = DiaryUser.fetchRequest()
-//let context = appDelegate.persistentContainer.viewContext
-//                diary = DiaryUser(context: appDelegate.persistentContainer.viewContext)
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateFormat = "yyyy/MM/dd"
-//                let date = dateFormatter.date(from: dateLabel.text!)
-//                diary?.date = date
-//                diary?.diaryLabel = diaryText.text
-//                diary?.diary = noteText.text
-//                diary?.mood = moodString
-//                diary?.weather = weatherString
-//                if let diaryImage = myImage.image{
-//                    if let imageData = UIImagePNGRepresentation(diaryImage){
-//                        diary?.diaryImage = NSData(data:imageData) as Data
-//                    }
-//                }
-                //appDelegate.saveContext()
             }
-            //dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func mood1Button(_ sender: UIButton) {
@@ -230,6 +204,8 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             dateLabel.text = date
         }
         if let diary = diary{
+            moodString = diary.mood!
+            weatherString = diary.weather!
             diaryText.text = diary.diaryLabel
             if let weatherImage = diary.weather{
                 if weatherImage == ""{
