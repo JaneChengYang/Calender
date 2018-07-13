@@ -65,12 +65,6 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
         myCollection.reloadData()
         print("AccountViewController\(diary?.totalUser?.count)")
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let controller = storyboard?.instantiateViewController(withIdentifier: "ee"){
-//
-//            present(controller, animated: true, completion: nil)
-//                }
-//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? AddAccountViewController{
             controller.date = dateLabel.text
