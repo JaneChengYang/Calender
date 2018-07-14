@@ -230,22 +230,31 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             }
             noteText.text = diary.diary
         }
-//        if let date = date{
-//            dateLabel.text = date
-//        }
-//        if let diary = diary{
-//            if let image = diary.diaryImage{
-//                myImage.image = UIImage(data: image)
-//                myImage.contentMode = .scaleToFill
-//            }else{
-//                myImage.image = UIImage(named: "4")
-//                myImage.contentMode = .center
-//            }
-//            diaryText.text = diary.diaryLabel
-//            moodImage.image = UIImage(named: diary.mood!)
-//            weatherImage.image = UIImage(named: diary.weather!)
-//            noteText.text = diary.diary
-//        }
+        // 註冊監控
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow), // 執行keyboardWillShow function
+            name: NSNotification.Name.UIKeyboardWillShow, // 在鍵盤跳出來的時候
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide), // 執行keyboardWillHide function
+            name: NSNotification.Name.UIKeyboardWillHide, // 在鍵盤收起來的時候
+            object: nil
+        )
+    }
+    @objc func keyboardWillShow(_ notification: Notification) {
+        // 擷取鍵盤高度，並將view的y座標設定為負的鍵盤高度，這樣view就會往上提高
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame = CGRect(x: 0.0, y: -keyboardHeight, width: self.view.frame.width, height: self.view.frame.size.height)
+        }
+    }
+    @objc func keyboardWillHide(_ notification: Notification) {
+        // 鍵盤收起來時，就將view歸回原位
+        self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
     }
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let diaryImage = myImage.image{

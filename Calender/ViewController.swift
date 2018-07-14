@@ -11,21 +11,7 @@ import JTAppleCalendar
 import CoreData
 
 class ViewController: UIViewController{
-    @IBOutlet weak var totalLabel: UILabel!
     var diary = [DiaryUser]()
-    
-//    @IBAction func isSwitch(_ sender: UISwitch) {
-//        if mySwitch.isOn == true{
-//            myContainer.isHidden = false
-//            calenderView.isHidden = true
-//        }else{
-//            myContainer.isHidden = true
-//            calenderView.isHidden = false
-//        }
-//    }
-//    @IBOutlet weak var mySwitch: UISwitch!
-//    @IBOutlet weak var myContainer: UIView!
-    
     //判斷滾動時total用
     var scroll:Int64 = 0
     var user = [Users]()
@@ -35,15 +21,12 @@ class ViewController: UIViewController{
     //過去的月日期
     let outsideMonthColor = UIColor.gray
     //這個月的日期
-    let monthColor = UIColor.white
+    let monthColor = UIColor.black
     //選到的日期
     let selectedMonthColor = UIColor.black
     //當前的日期
     let currentDateSelectedViewColor =  UIColor(colorWithHexValue: 0x4e3f5d)
-    
-    
     @IBOutlet weak var calenderView: JTAppleCalendarView!
-    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     
@@ -57,7 +40,6 @@ class ViewController: UIViewController{
         //calenderView.selectDates([Date() ]) //顯示現在的日
         setupCalenderView()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(diary.count)
@@ -88,7 +70,7 @@ class ViewController: UIViewController{
         let todaysDateString = formatter.string(from: todaysDate)
         let monthDateString = formatter.string(from: cellState.date)
         if todaysDateString == monthDateString{
-            validCell.dateLabel.textColor = UIColor.blue
+            validCell.dateLabel.textColor = UIColor.red
         }else{
             if cellState.dateBelongsTo == .thisMonth{
                 validCell.dateLabel.textColor = monthColor
@@ -127,10 +109,6 @@ extension ViewController:JTAppleCalendarViewDelegate{
     func sharedFunctionToConfigureCell(myCustomCell: CustomCell, cellState: CellState, date: Date) {
         myCustomCell.dateLabel.text = cellState.text
         if Calendar.current.isDateInToday(date) {
-//            myCustomCell.selectedView.backgroundColor = UIColor.red
-//        } else {
-//            myCustomCell.selectedView.backgroundColor = UIColor.white
-//        }
         }
     }
     
@@ -139,22 +117,6 @@ extension ViewController:JTAppleCalendarViewDelegate{
        //guard let validCell =  calendar as? CustomCell else{return}
         formatter.dateFormat = "yyyy/MM/dd"
         //判斷是新增還是編輯
-//        for i in 0..<user.count{
-//            if date.compare(user[i].date!) == .orderedSame{
-//                if user[i].total != 0{
-//                    guard let controllet = storyboard?.instantiateViewController(withIdentifier: "aa") as? UpdatedTableViewController else{return}
-//                    //把我點選的日期傳出去
-//                    controllet.date = formatter.string(from: date)
-//                    controllet.user = user[i]
-//                    cell?.bounce()
-//                    handleCellTextColor(view: cell, cellState: cellState)
-//                    handleCellSelected(view: cell, cellState: cellState)
-//                    present(controllet, animated: true, completion: nil)
-//                    break
-//                }
-//            }
-//        }
-        
         for i in 0..<diary.count{
             if date.compare(diary[i].date!) == .orderedSame{
                 if diary[i].diary != ""{
@@ -169,8 +131,6 @@ extension ViewController:JTAppleCalendarViewDelegate{
                 }
             }
         }
-       
-//        guard let controllet = storyboard?.instantiateViewController(withIdentifier: "bb") as? FFTableViewController else{return}
         guard let controller = storyboard?.instantiateViewController(withIdentifier: "addDiary") as? AddDiaryViewController else{fatalError()}
         //把我點選的日期傳出去
         controller.date = formatter.string(from: date)
@@ -186,97 +146,31 @@ extension ViewController:JTAppleCalendarViewDelegate{
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellSelected(view: cell, cellState: cellState)
     }
-//    //視圖是否滾動
-//    func calendarDidScroll(_ calendar: JTAppleCalendarView) {
-//        totalLabel.text = "\(0)"
-//        calenderView.reloadData()
-//    }
     //設定cell內容
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         guard let cell = calendar.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else{
             fatalError()
         }
-//        for i in 0..<user.count{
-//            if date.compare(user[i].date!) == .orderedAscending{
-//                let total = user.filter {$0.date! > date}
-//                scroll = total.reduce(0){$0 + $1.total}
-//                totalLabel.text = "\(scroll)"
-//               // print(total)
-//                break
-//            }
-//            else if cellState.date.compare(user[i].date!) == .orderedDescending{
-//                let total = user.filter {$0.date! > cellState.date}
-//                scroll = total.reduce(0){$0 + $1.total}
-//                totalLabel.text = "\(scroll)"
-//                print(total)
-//                //break
-//            }else if cellState.date.compare(user[i].date!) == .orderedSame{
-//                let total = user.filter {$0.date! == cellState.date}
-//                scroll = total.reduce(0){$0 + $1.total}
-//                totalLabel.text = "\(scroll)"
-//                print(total)
-//                //break
-//            }
-//        }
-        cell.totalView.isHidden = true
-            for i in 0..<diary.count{
-                if date.compare(diary[i].date!) == .orderedSame{
-                    if diary[i].diary != ""{
-                        cell.totalView.isHidden = false
-                        break
-                    }
-                }
-            }
-        
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellSelected(view: cell, cellState: cellState)
         sharedFunctionToConfigureCell(myCustomCell: cell, cellState: cellState, date: date)
+        //cell.totalView.isHidden = true
+        for i in 0..<diary.count{
+            if date.compare(diary[i].date!) == .orderedSame{
+                if diary[i].diary != ""{
+                    //cell.totalView.isHidden = false
+                    cell.dateLabel.textColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
+                    //cell.dateLabel.font =  cell.dateLabel.font.withSize(40)
+                    cell.dateLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
+                    break
+                }
+            }
+        }
         return cell
     }
-    
-    
-    //這裡
+
     //設定日曆 滾動日曆
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-//        setupViewsOfCalender(from: visibleDates)
-//        var sum:Int64 = 0
-//       for i in 0..<user.count{
-//            let calendar = Calendar.current
-//            let components = calendar.dateComponents([.year, .month], from: user[i].date!)
-//         if components.year == 2018 && components.month == 5{
-//            sum += user[i].total
-//            totalLabel.text = String(sum)
-//            self.reloadInputViews()
-//            //break
-//         }
-//        if components.year == 2018 && components.month == 6{
-//            sum += user[i].total
-//            totalLabel.text = String(sum)
-//            self.reloadInputViews()
-//            //break
-//        }
-//            print(components.year, components.month,components.day,components.date)
-//           }
-//        let date = visibleDates.outdates.first?.date
-//        let components = Calendar.current.dateComponents(in: TimeZone(abbreviation: "GMT")!, from: date!)
-//        print(components.year, components.month)
-//        for i in 0..<user.count{
-//                 if components.year == 2018 && components.month == 5{
-//                    sum = 0
-//                    sum += user[i].total
-//                    totalLabel.text = String(sum)
-//                    self.reloadInputViews()
-//                    //break
-//                 }
-//                if components.year == 2018 && components.month == 6{
-//                    sum = 0
-//                    sum += user[i].total
-//                    totalLabel.text = String(sum)
-//                    self.reloadInputViews()
-//                    //break
-//                }
-//        }
-//
         setupViewsOfCalender(from: visibleDates)
         }
     }

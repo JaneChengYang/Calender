@@ -70,8 +70,13 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
             controller.date = dateLabel.text
             controller.diary = self.diary
         }else if let controller = segue.destination as? ContentViewController{
-            controller.date = dateLabel.text
-            controller.diary = self.diary
+            //抓到使用者點選的row
+            if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{
+                let rows = row
+                controller.date = dateLabel.text
+                controller.diary = self.diary
+                controller.row = rows
+            }
         }
     }
 }
