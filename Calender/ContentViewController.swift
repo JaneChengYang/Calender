@@ -138,7 +138,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
         userView.layer.shadowRadius = 4.0
         userView.layer.shadowOpacity = 1.0
         userView.layer.masksToBounds = false
-        userView.layer.shadowPath = UIBezierPath(roundedRect:userView.bounds, cornerRadius: userView.layer.cornerRadius).cgPath
+        //userView.layer.shadowPath = UIBezierPath(roundedRect:userView.bounds, cornerRadius: userView.layer.cornerRadius).cgPath
         
         noteView.layer.cornerRadius = 4.0
         noteView.layer.borderWidth = 1.0
@@ -149,7 +149,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
         noteView.layer.shadowRadius = 4.0
         noteView.layer.shadowOpacity = 1.0
         noteView.layer.masksToBounds = false
-        noteView.layer.shadowPath = UIBezierPath(roundedRect:noteView.bounds, cornerRadius: noteView.layer.cornerRadius).cgPath
+        //noteView.layer.shadowPath = UIBezierPath(roundedRect:noteView.bounds, cornerRadius: noteView.layer.cornerRadius).cgPath
         
         moneyView.layer.cornerRadius = 4.0
         moneyView.layer.borderWidth = 1.0
@@ -160,7 +160,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
         moneyView.layer.shadowRadius = 4.0
         moneyView.layer.shadowOpacity = 1.0
         moneyView.layer.masksToBounds = false
-        moneyView.layer.shadowPath = UIBezierPath(roundedRect:moneyView.bounds, cornerRadius: moneyView.layer.cornerRadius).cgPath
+        //moneyView.layer.shadowPath = UIBezierPath(roundedRect:moneyView.bounds, cornerRadius: moneyView.layer.cornerRadius).cgPath
     }
     override func viewDidLoad() {
         super.viewDidLoad()
