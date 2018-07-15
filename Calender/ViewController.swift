@@ -154,14 +154,18 @@ extension ViewController:JTAppleCalendarViewDelegate{
         handleCellTextColor(view: cell, cellState: cellState)
         handleCellSelected(view: cell, cellState: cellState)
         sharedFunctionToConfigureCell(myCustomCell: cell, cellState: cellState, date: date)
-        //cell.totalView.isHidden = true
+        cell.totalView.isHidden = true
         for i in 0..<diary.count{
             if date.compare(diary[i].date!) == .orderedSame{
                 if diary[i].diary != ""{
-                    //cell.totalView.isHidden = false
-                    cell.dateLabel.textColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
-                    //cell.dateLabel.font =  cell.dateLabel.font.withSize(40)
-                    cell.dateLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
+                    let todaysDateString = formatter.string(from: todaysDate)
+                    let monthDateString = formatter.string(from: cellState.date)
+                    if todaysDateString == monthDateString{
+                        cell.dateLabel.textColor = UIColor.red
+                    }else{
+                        cell.dateLabel.textColor = UIColor.white
+                    }
+                    cell.totalView.isHidden = false
                     break
                 }
             }
