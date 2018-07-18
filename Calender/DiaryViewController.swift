@@ -12,6 +12,8 @@ import BubbleTransition
 class DiaryViewController: UIViewController,UIViewControllerTransitioningDelegate{
     var diary:DiaryUser?
     var date:String?
+    
+    @IBOutlet weak var helloButton: UIButton!
     //日記
     @IBOutlet weak var diaryTextView: UITextView!
     //心情圖
@@ -77,6 +79,12 @@ class DiaryViewController: UIViewController,UIViewControllerTransitioningDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let hello = helloButton.frame.size.width / 2
+        helloButton.layer.cornerRadius = hello
+        let my = myButton.frame.size.width / 2
+        myButton.layer.cornerRadius = my
+        let ac = acButton.frame.size.width / 2
+        acButton.layer.cornerRadius = ac
         if let date = date{
             myLabel.text = date
         }

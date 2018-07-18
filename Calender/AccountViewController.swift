@@ -41,7 +41,7 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
         cell.contentView.layer.borderColor = UIColor.clear.cgColor
         cell.contentView.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        cell.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         cell.layer.shadowRadius = 4.0
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false

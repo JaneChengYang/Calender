@@ -11,6 +11,8 @@ import CoreData
 
 class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var row:Int?
+    
+    @IBOutlet weak var helloButton: UIButton!
     @IBOutlet weak var myImgae: UIImageView!
     @IBOutlet weak var notesView: UIView!
     @IBOutlet weak var moneysView: UIView!
@@ -60,6 +62,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         //收鍵盤
         view.endEditing(true)
+        if isSwitch.isOn == true{
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "拍照", style: .default, handler: { (alerAction) in
             self.photograph()
@@ -73,6 +76,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
         }))
         alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
+        }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
@@ -101,9 +105,9 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
             userText.isHidden = true
             moneyText.isHidden = true
             noteText.isHidden = true
-            usersView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
-            moneysView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
-            notesView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
+            userView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
+            moneyView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
+            noteView.backgroundColor = UIColor(red: 199/255, green: 79/255, blue: 78/255, alpha: 1)
         }else{
             myButton.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
             userLabel.isHidden = true
@@ -115,9 +119,9 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
                 userText.text = userLabel.text
                 moneyText.text = moneLabel.text
                 noteText.text = noteLabel.text
-                usersView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
-            moneysView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
-            notesView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
+                userView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
+            moneyView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
+            noteView.backgroundColor = UIColor(red: 119/255, green: 124/255, blue: 168/255, alpha: 1)
         }
     }
     @IBOutlet weak var isSwitch: UISwitch!
@@ -129,37 +133,39 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        userView.layer.cornerRadius = 4.0
-        userView.layer.borderWidth = 1.0
-        userView.layer.borderColor = UIColor.clear.cgColor
-        userView.layer.masksToBounds = false
-        userView.layer.shadowColor = UIColor.gray.cgColor
-        userView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        userView.layer.shadowRadius = 4.0
-        userView.layer.shadowOpacity = 1.0
-        userView.layer.masksToBounds = false
+        myButton.layer.cornerRadius = myButton.frame.size.width / 2
+        helloButton.layer.cornerRadius = helloButton.frame.size.width / 2
+        usersView.layer.cornerRadius = 4.0
+        usersView.layer.borderWidth = 1.0
+        usersView.layer.borderColor = UIColor.clear.cgColor
+        usersView.layer.masksToBounds = false
+        usersView.layer.shadowColor = UIColor.gray.cgColor
+        usersView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        usersView.layer.shadowRadius = 4.0
+        usersView.layer.shadowOpacity = 1.0
+        usersView.layer.masksToBounds = false
         //userView.layer.shadowPath = UIBezierPath(roundedRect:userView.bounds, cornerRadius: userView.layer.cornerRadius).cgPath
         
-        noteView.layer.cornerRadius = 4.0
-        noteView.layer.borderWidth = 1.0
-        noteView.layer.borderColor = UIColor.clear.cgColor
-        noteView.layer.masksToBounds = false
-        noteView.layer.shadowColor = UIColor.gray.cgColor
-        noteView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        noteView.layer.shadowRadius = 4.0
-        noteView.layer.shadowOpacity = 1.0
-        noteView.layer.masksToBounds = false
+        notesView.layer.cornerRadius = 4.0
+        notesView.layer.borderWidth = 1.0
+        notesView.layer.borderColor = UIColor.clear.cgColor
+        notesView.layer.masksToBounds = false
+        notesView.layer.shadowColor = UIColor.gray.cgColor
+        notesView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        notesView.layer.shadowRadius = 4.0
+        notesView.layer.shadowOpacity = 1.0
+        notesView.layer.masksToBounds = false
         //noteView.layer.shadowPath = UIBezierPath(roundedRect:noteView.bounds, cornerRadius: noteView.layer.cornerRadius).cgPath
         
-        moneyView.layer.cornerRadius = 4.0
-        moneyView.layer.borderWidth = 1.0
-        moneyView.layer.borderColor = UIColor.clear.cgColor
-        moneyView.layer.masksToBounds = false
-        moneyView.layer.shadowColor = UIColor.gray.cgColor
-        moneyView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        moneyView.layer.shadowRadius = 4.0
-        moneyView.layer.shadowOpacity = 1.0
-        moneyView.layer.masksToBounds = false
+        moneysView.layer.cornerRadius = 4.0
+        moneysView.layer.borderWidth = 1.0
+        moneysView.layer.borderColor = UIColor.clear.cgColor
+        moneysView.layer.masksToBounds = false
+        moneysView.layer.shadowColor = UIColor.gray.cgColor
+        moneysView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        moneysView.layer.shadowRadius = 4.0
+        moneysView.layer.shadowOpacity = 1.0
+        moneysView.layer.masksToBounds = false
         //moneyView.layer.shadowPath = UIBezierPath(roundedRect:moneyView.bounds, cornerRadius: moneyView.layer.cornerRadius).cgPath
     }
     override func viewDidLoad() {
@@ -170,6 +176,7 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
     if let row = row{
         if let diary = diary{
             if let totalDiary = diary.totalUser?.allObjects as? [TotalUser]{
+                print(totalDiary)
             userLabel.text = totalDiary[row].user
             moneLabel.text = totalDiary[row].monay
             noteLabel.text = totalDiary[row].note

@@ -15,7 +15,18 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
     var weatherString = ""
     var date:String?
     
+    @IBOutlet weak var helloButton: UIButton!
+    @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myImage: UIImageView!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let my = myButton.frame.size.width / 2
+        myButton.layer.cornerRadius = my
+        let hello = helloButton.frame.size.width / 2
+        helloButton.layer.cornerRadius = hello
+        moodImage.image = UIImage(named: "22")
+        weatherImage.image = UIImage(named: "18")
+    }
     @IBAction func tapView(_ sender: Any) {
         view.endEditing(true)
     }

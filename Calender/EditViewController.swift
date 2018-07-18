@@ -15,6 +15,8 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     var weatherString = ""
     var date:String?
     
+    @IBOutlet weak var helloButton: UIButton!
+    @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myImage: UIImageView!
     @IBAction func tapView(_ sender: Any) {
         view.endEditing(true)
@@ -269,6 +271,10 @@ class EditViewController: UIViewController,UIImagePickerControllerDelegate,UINav
      }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let aa = myButton.frame.size.width / 2
+        myButton.layer.cornerRadius = aa
+        let hello = helloButton.frame.size.width / 2
+        helloButton.layer.cornerRadius = hello
 //        if let diary = diary{
 //            if let image = diary.diaryImage{
 //                myImage.image = UIImage(data: image)

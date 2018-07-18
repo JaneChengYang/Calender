@@ -14,6 +14,8 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
     var total:TotalUser?
     var date:String?
 
+    @IBOutlet weak var myButton: UIButton!
+    @IBOutlet weak var helloButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let date = date{
@@ -48,6 +50,10 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let my = myButton.frame.size.width / 2
+        myButton.layer.cornerRadius = my
+        let hello = helloButton.frame.size.width / 2
+        helloButton.layer.cornerRadius = hello
         userView.layer.cornerRadius = 4.0
         userView.layer.borderWidth = 1.0
         userView.layer.borderColor = UIColor.clear.cgColor
