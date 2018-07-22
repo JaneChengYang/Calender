@@ -13,7 +13,9 @@ import CoreData
 class AccountViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIViewControllerTransitioningDelegate{
     var diary:DiaryUser?
     var date:String?
+    var total = 0
     
+    @IBOutlet weak var piechartButton: UIButton!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var myCollection: UICollectionView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -33,6 +35,7 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
                     cell.userLabel.text = totalDiary[indexPath.row].user
                     cell.myImage.image = UIImage(data: totalDiary[indexPath.row].accImage!)
                     let total = totalDiary.reduce(0) { $0 + Int($1.monay!)! }
+                    self.total = total
                     totalLabel.text = ("總額:\(String(total))")
                 }
         //設定陰影效果
@@ -77,6 +80,9 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
                 controller.diary = self.diary
                 controller.row = rows
             }
+        }else if let controller = segue.destination as? PieChartViewController{
+            controller.diary = self.diary
+            controller.total = String(self.total)
         }
     }
 }

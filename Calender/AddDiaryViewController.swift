@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     var diary:DiaryUser?
     var moodString = ""
     var weatherString = ""

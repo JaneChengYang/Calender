@@ -9,11 +9,26 @@
 import UIKit
 import CoreData
 
-class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
+    var user = ["美食","通勤","娛樂","電話","醫療","日常用品","飲料","其他"]
+    
+    @IBOutlet weak var myPickerView: UIPickerView!
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return user.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return user[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        moneyText.text = user[row]
+    }
     var diary:DiaryUser?
     var total:TotalUser?
     var date:String?
-
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var helloButton: UIButton!
     override func viewDidLoad() {
@@ -89,7 +104,7 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        if moneyText.text == ""{
+        if userText.text == ""{
             let alert = UIAlertController(title: "錯誤", message: "請輸入幾金額", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -97,8 +112,8 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
                  total = TotalUser(context: appDelegate.persistentContainer.viewContext)
         let context = appDelegate.persistentContainer.viewContext
-                total?.user = userText.text ?? ""
-                total?.monay = moneyText.text ?? ""
+                total?.user = moneyText.text ?? ""
+                total?.monay = userText.text ?? ""
                 total?.note = noteText.text ?? ""
                 if let diaryImage = myImage.image{
                     if let imageData = UIImagePNGRepresentation(diaryImage){

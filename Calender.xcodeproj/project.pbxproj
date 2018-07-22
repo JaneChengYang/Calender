@@ -16,11 +16,11 @@
 		F439408420B3044900662113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F439408220B3044900662113 /* Main.storyboard */; };
 		F439408620B3044A00662113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F439408520B3044A00662113 /* Assets.xcassets */; };
 		F439408920B3044A00662113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F439408720B3044A00662113 /* LaunchScreen.storyboard */; };
+		F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441C6322103483B00E8CFDD /* PieChartViewController.swift */; };
 		F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45924EE20F3B00900DF434B /* ContentViewController.swift */; };
 		F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */; };
 		F460AB0720E2891F00676EC2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0620E2891F00676EC2 /* AccountViewController.swift */; };
 		F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F475FCA420F1FA4500824659 /* AddAccountViewController.swift */; };
-		F487E5F420B701E3005F8AC1 /* crayon_1-1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F487E5F320B701E3005F8AC1 /* crayon_1-1.ttf */; };
 		F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E4652F20D0C52900948CEA /* Calender.xcdatamodeld */; };
 		F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,11 +39,11 @@
 		F439408520B3044A00662113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F439408820B3044A00662113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F439408A20B3044A00662113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F441C6322103483B00E8CFDD /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		F45924EE20F3B00900DF434B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		F460AB0620E2891F00676EC2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F475FCA420F1FA4500824659 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
-		F487E5F320B701E3005F8AC1 /* crayon_1-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "crayon_1-1.ttf"; path = "../../../字型/crayonfont/crayon_1-1.ttf"; sourceTree = "<group>"; };
 		F4E4653020D0C52A00948CEA /* Calender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calender.xcdatamodel; sourceTree = "<group>"; };
 		F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,9 +98,9 @@
 		F439407D20B3044900662113 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
-				F487E5F320B701E3005F8AC1 /* crayon_1-1.ttf */,
 				F439407E20B3044900662113 /* AppDelegate.swift */,
 				F439408220B3044900662113 /* Main.storyboard */,
+				F441C6322103483B00E8CFDD /* PieChartViewController.swift */,
 				F475FCA420F1FA4500824659 /* AddAccountViewController.swift */,
 				F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */,
 				F45924EE20F3B00900DF434B /* ContentViewController.swift */,
@@ -178,7 +178,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F487E5F420B701E3005F8AC1 /* crayon_1-1.ttf in Resources */,
 				F439408920B3044A00662113 /* LaunchScreen.storyboard in Resources */,
 				F439408620B3044A00662113 /* Assets.xcassets in Resources */,
 				F439408420B3044900662113 /* Main.storyboard in Resources */,
@@ -241,6 +240,7 @@
 				F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */,
 				F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */,
 				F439407F20B3044900662113 /* AppDelegate.swift in Sources */,
+				F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */,
 				F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */,
 				F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */,
 				F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */,
