@@ -2387,6 +2387,14 @@
                         <viewLayoutGuide key="safeArea" id="msQ-nE-qc0"/>
                     </view>
                     <connections>
+                        <outlet property="commutingLabel" destination="22Q-jl-l3X" id="dqK-yI-1pt"/>
+                        <outlet property="dailySuppliesLabel" destination="ULH-Oy-iLm" id="XBJ-YW-bhU"/>
+                        <outlet property="drinkLabel" destination="Q9o-Yr-rCp" id="9ki-Y6-C77"/>
+                        <outlet property="entertainmentLabel" destination="4qd-cM-KLJ" id="HkN-Yw-tqP"/>
+                        <outlet property="foodLabel" destination="JCH-xO-lnN" id="gds-PX-0ly"/>
+                        <outlet property="medicalLabel" destination="HfH-Ca-fAG" id="yRa-rJ-mah"/>
+                        <outlet property="otherLabel" destination="G8L-Wo-qQ6" id="fGx-h8-2PB"/>
+                        <outlet property="phoneLabel" destination="EbT-LH-6Q5" id="LaT-Kn-nfC"/>
                         <outlet property="returnButton" destination="OJO-i5-Xli" id="jHI-8z-ndL"/>
                     </connections>
                 </viewController>

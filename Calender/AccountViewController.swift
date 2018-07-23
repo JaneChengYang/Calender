@@ -70,8 +70,12 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? AddAccountViewController{
+//            if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{
             controller.date = dateLabel.text
             controller.diary = self.diary
+//            let rows = row
+//            controller.show = rows
+//            }
         }else if let controller = segue.destination as? ContentViewController{
             //抓到使用者點選的row
             if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{

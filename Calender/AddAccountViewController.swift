@@ -112,7 +112,11 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
                  total = TotalUser(context: appDelegate.persistentContainer.viewContext)
         let context = appDelegate.persistentContainer.viewContext
-                total?.user = moneyText.text ?? ""
+                if moneyText.text == ""{
+                    total?.user = "美食"
+                }else{
+                    total?.user = moneyText.text ?? ""
+                }
                 total?.monay = userText.text ?? ""
                 total?.note = noteText.text ?? ""
                 if let diaryImage = myImage.image{

@@ -56,12 +56,12 @@ class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UI
             do{
                 let results = try context.fetch(result)
                 if let totalDiary = diary.totalUser?.allObjects as? [TotalUser]{
-                    totalDiary[0].monay = userLabel.text
-                    totalDiary[0].user = moneLabel.text
-                    totalDiary[0].note = noteLabel.text
+                    totalDiary[row!].monay = userLabel.text
+                    totalDiary[row!].user = moneLabel.text
+                    totalDiary[row!].note = noteLabel.text
                     if let diaryImage = myImgae.image{
                         if let imageData = UIImagePNGRepresentation(diaryImage){
-                            totalDiary[0].accImage = NSData(data:imageData) as Data
+                            totalDiary[row!].accImage = NSData(data:imageData) as Data
                         }
                     }
                     appDelegate.saveContext()
