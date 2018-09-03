@@ -12,6 +12,7 @@ import CoreData
 
 class ViewController: UIViewController{
     var diary = [DiaryUser]()
+    var date = Date()
     //判斷滾動時total用
     var scroll:Int64 = 0
     var user = [Users]()
@@ -35,14 +36,12 @@ class ViewController: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDid\(user.count)")
         calenderView.scrollToDate(Date(), animateScroll:false) //顯示現在的年月
         //calenderView.selectDates([Date() ]) //顯示現在的日
         setupCalenderView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(diary.count)
         //讀檔
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             let users:NSFetchRequest<DiaryUser> = DiaryUser.fetchRequest()
@@ -50,6 +49,8 @@ class ViewController: UIViewController{
             do{
                 diary = try context.fetch(users)
                 calenderView.reloadData()
+                 print("diary Array \(diary.count)")
+                
             }catch{
             }
         }
@@ -60,7 +61,6 @@ class ViewController: UIViewController{
         calenderView.visibleDates { (visibleDates) in
             self.setupViewsOfCalender(from: visibleDates)
         }
-        
     }
     func handleCellTextColor(view: JTAppleCell?, cellState:CellState){
         guard let validCell =  view as? CustomCell else{return}
@@ -114,7 +114,6 @@ extension ViewController:JTAppleCalendarViewDelegate{
     
     //點日曆時
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-       //guard let validCell =  calendar as? CustomCell else{return}
         formatter.dateFormat = "yyyy/MM/dd"
         //判斷是新增還是編輯
         for i in 0..<diary.count{

@@ -30,14 +30,14 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? AccountCollectionViewCell else{fatalError()}
         //抓出DiaryUser的totalUser並加入cell
-                if let totalDiary = diary?.totalUser?.allObjects as? [TotalUser]{
-                    cell.moneyLabel.text = totalDiary[indexPath.row].monay
-                    cell.userLabel.text = totalDiary[indexPath.row].user
-                    cell.myImage.image = UIImage(data: totalDiary[indexPath.row].accImage!)
-                    let total = totalDiary.reduce(0) { $0 + Int($1.monay!)! }
-                    self.total = total
-                    totalLabel.text = ("總額:\(String(total))")
-                }
+        if let totalDiary = diary?.totalUser?.allObjects as? [TotalUser]{
+            cell.moneyLabel.text = totalDiary[indexPath.row].monay
+            cell.userLabel.text = totalDiary[indexPath.row].user
+            cell.myImage.image = UIImage(data: totalDiary[indexPath.row].accImage!)
+            let total = totalDiary.reduce(0) { $0 + Int($1.monay!)! }
+            self.total = total
+            totalLabel.text = ("總額:\(String(total))")
+        }
         //設定陰影效果
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0
@@ -70,12 +70,12 @@ class AccountViewController: UIViewController,UICollectionViewDelegate,UICollect
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? AddAccountViewController{
-//            if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{
+            //            if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{
             controller.date = dateLabel.text
             controller.diary = self.diary
-//            let rows = row
-//            controller.show = rows
-//            }
+            //            let rows = row
+            //            controller.show = rows
+            //            }
         }else if let controller = segue.destination as? ContentViewController{
             //抓到使用者點選的row
             if let row = self.myCollection.indexPathsForSelectedItems?.first?.item{

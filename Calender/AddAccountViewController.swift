@@ -130,7 +130,6 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
             }
             dismiss(animated: true, completion: nil)
         }
-        
     }
     @IBAction func returnButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -143,7 +142,6 @@ class AddAccountViewController: UIViewController,UIImagePickerControllerDelegate
         }
         dismiss(animated: true, completion: nil)
     }
-
     func photograph(){
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .camera

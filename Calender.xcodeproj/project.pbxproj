@@ -11,6 +11,7 @@
 		F420E11520B3091600C6B90C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420E11420B3091600C6B90C /* CustomCell.swift */; };
 		F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48820E520EA000E159E /* DiaryViewController.swift */; };
 		F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */; };
+		F42CCA6D212FED8D008E786E /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42CCA6C212FED8D008E786E /* CacheManager.swift */; };
 		F439407F20B3044900662113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439407E20B3044900662113 /* AppDelegate.swift */; };
 		F439408120B3044900662113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F439408020B3044900662113 /* ViewController.swift */; };
 		F439408420B3044900662113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F439408220B3044900662113 /* Main.storyboard */; };
@@ -19,10 +20,20 @@
 		F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441C6322103483B00E8CFDD /* PieChartViewController.swift */; };
 		F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45924EE20F3B00900DF434B /* ContentViewController.swift */; };
 		F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */; };
-		F460AB0720E2891F00676EC2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0620E2891F00676EC2 /* AccountViewController.swift */; };
+		F46C1AC1213677A100F51761 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C1AC0213677A100F51761 /* Service.swift */; };
 		F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F475FCA420F1FA4500824659 /* AddAccountViewController.swift */; };
+		F482BCF2213403CA00081B1C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482BCF1213403CA00081B1C /* ExchangeViewController.swift */; };
+		F482BCF4213403E600081B1C /* ExchangeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482BCF3213403E600081B1C /* ExchangeEditViewController.swift */; };
+		F482BCF6213407F800081B1C /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482BCF5213407F800081B1C /* CloudViewController.swift */; };
+		F482BCF82134470700081B1C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482BCF72134470700081B1C /* ShareViewController.swift */; };
+		F49D0CF7212ABDD400564EB1 /* SingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49D0CF6212ABDD400564EB1 /* SingViewController.swift */; };
+		F49D0CF9212AC20100564EB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F49D0CF8212AC20100564EB1 /* GoogleService-Info.plist */; };
+		F4AF1D69212D132100FEB506 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AF1D68212D132100FEB506 /* CurrentUser.swift */; };
 		F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4E4652F20D0C52900948CEA /* Calender.xcdatamodeld */; };
+		F4EF89A52134F4BE00F5A6B1 /* UIImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EF89A42134F4BE00F5A6B1 /* UIImage+Scale.swift */; };
 		F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */; };
+		F4F6541A212C5A190079D908 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F65419212C5A190079D908 /* UserViewController.swift */; };
+		F4F6541C212C63570079D908 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F6541B212C63570079D908 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,20 +43,32 @@
 		F420E11420B3091600C6B90C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F42BC48820E520EA000E159E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		F42CCA6C212FED8D008E786E /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		F439407B20B3044900662113 /* Calender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F439407E20B3044900662113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F439408020B3044900662113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F439408320B3044900662113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F439408520B3044A00662113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F439408820B3044A00662113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F439408A20B3044A00662113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F441C6322103483B00E8CFDD /* PieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		F45924EE20F3B00900DF434B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		F45E19182111F84600C77EB3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
-		F460AB0620E2891F00676EC2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		F46C1AC0213677A100F51761 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F475FCA420F1FA4500824659 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		F482BCF1213403CA00081B1C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		F482BCF3213403E600081B1C /* ExchangeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeEditViewController.swift; sourceTree = "<group>"; };
+		F482BCF5213407F800081B1C /* CloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
+		F482BCF72134470700081B1C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		F49D0CF5212ABBE600564EB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F49D0CF6212ABDD400564EB1 /* SingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingViewController.swift; sourceTree = "<group>"; };
+		F49D0CF8212AC20100564EB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4AF1D68212D132100FEB506 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		F4E4653020D0C52A00948CEA /* Calender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calender.xcdatamodel; sourceTree = "<group>"; };
+		F4EF89A42134F4BE00F5A6B1 /* UIImage+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scale.swift"; sourceTree = "<group>"; };
 		F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		F4F65419212C5A190079D908 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		F4F6541B212C63570079D908 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,21 +121,32 @@
 		F439407D20B3044900662113 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
-				F439407E20B3044900662113 /* AppDelegate.swift */,
 				F439408220B3044900662113 /* Main.storyboard */,
+				F439407E20B3044900662113 /* AppDelegate.swift */,
+				F42CCA6C212FED8D008E786E /* CacheManager.swift */,
+				F4F65419212C5A190079D908 /* UserViewController.swift */,
+				F49D0CF6212ABDD400564EB1 /* SingViewController.swift */,
 				F441C6322103483B00E8CFDD /* PieChartViewController.swift */,
 				F475FCA420F1FA4500824659 /* AddAccountViewController.swift */,
 				F4F44E6B20EFC42200C6EC7D /* EditViewController.swift */,
-				F45924EE20F3B00900DF434B /* ContentViewController.swift */,
 				F42BC48A20E5211B000E159E /* AddDiaryViewController.swift */,
+				F45924EE20F3B00900DF434B /* ContentViewController.swift */,
 				F42BC48820E520EA000E159E /* DiaryViewController.swift */,
 				F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */,
-				F460AB0620E2891F00676EC2 /* AccountViewController.swift */,
+				F4F6541B212C63570079D908 /* AccountViewController.swift */,
 				F420E11420B3091600C6B90C /* CustomCell.swift */,
 				F439408020B3044900662113 /* ViewController.swift */,
+				F4AF1D68212D132100FEB506 /* CurrentUser.swift */,
+				F46C1AC0213677A100F51761 /* Service.swift */,
+				F482BCF1213403CA00081B1C /* ExchangeViewController.swift */,
+				F482BCF3213403E600081B1C /* ExchangeEditViewController.swift */,
+				F482BCF5213407F800081B1C /* CloudViewController.swift */,
+				F482BCF72134470700081B1C /* ShareViewController.swift */,
+				F4EF89A42134F4BE00F5A6B1 /* UIImage+Scale.swift */,
 				F439408520B3044A00662113 /* Assets.xcassets */,
 				F439408720B3044A00662113 /* LaunchScreen.storyboard */,
 				F439408A20B3044A00662113 /* Info.plist */,
+				F49D0CF8212AC20100564EB1 /* GoogleService-Info.plist */,
 				F4E4652F20D0C52900948CEA /* Calender.xcdatamodeld */,
 			);
 			path = Calender;
@@ -130,6 +164,7 @@
 				F439407820B3044900662113 /* Frameworks */,
 				F439407920B3044900662113 /* Resources */,
 				ACB3A4902F66BD994EB4354B /* [CP] Embed Pods Frameworks */,
+				7F9979ED50F28892D1F4B0A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +187,11 @@
 				TargetAttributes = {
 					F439407A20B3044900662113 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -180,6 +220,7 @@
 			files = (
 				F439408920B3044A00662113 /* LaunchScreen.storyboard in Resources */,
 				F439408620B3044A00662113 /* Assets.xcassets in Resources */,
+				F49D0CF9212AC20100564EB1 /* GoogleService-Info.plist in Resources */,
 				F439408420B3044900662113 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +246,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F9979ED50F28892D1F4B0A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Calender/Pods-Calender-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Calender/Pods-Calender-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ACB3A4902F66BD994EB4354B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,15 +271,31 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Calender/Pods-Calender-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMPaperSwitch/RAMPaperSwitch.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMPaperSwitch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -236,16 +311,26 @@
 			files = (
 				F439408120B3044900662113 /* ViewController.swift in Sources */,
 				F420E11520B3091600C6B90C /* CustomCell.swift in Sources */,
+				F4F6541C212C63570079D908 /* AccountViewController.swift in Sources */,
+				F4F6541A212C5A190079D908 /* UserViewController.swift in Sources */,
+				F4EF89A52134F4BE00F5A6B1 /* UIImage+Scale.swift in Sources */,
 				F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */,
 				F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */,
+				F482BCF82134470700081B1C /* ShareViewController.swift in Sources */,
 				F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */,
 				F439407F20B3044900662113 /* AppDelegate.swift in Sources */,
 				F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */,
 				F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */,
+				F482BCF6213407F800081B1C /* CloudViewController.swift in Sources */,
+				F4AF1D69212D132100FEB506 /* CurrentUser.swift in Sources */,
 				F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */,
+				F42CCA6D212FED8D008E786E /* CacheManager.swift in Sources */,
+				F49D0CF7212ABDD400564EB1 /* SingViewController.swift in Sources */,
+				F482BCF4213403E600081B1C /* ExchangeEditViewController.swift in Sources */,
 				F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */,
+				F46C1AC1213677A100F51761 /* Service.swift in Sources */,
 				F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */,
-				F460AB0720E2891F00676EC2 /* AccountViewController.swift in Sources */,
+				F482BCF2213403CA00081B1C /* ExchangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +340,7 @@
 		F439408220B3044900662113 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F439408320B3044900662113 /* Base */,
+				F49D0CF5212ABBE600564EB1 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -264,6 +349,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F439408820B3044A00662113 /* Base */,
+				F45E19182111F84600C77EB3 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -275,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -335,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

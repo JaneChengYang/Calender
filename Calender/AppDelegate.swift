@@ -8,12 +8,28 @@
 
 import UIKit
 import CoreData
+import Firebase
+import FBSDKCoreKit
+import GoogleSignIn
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        var handled = false
+        
+        if url.absoluteString.contains("fb") {
+            handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+            
+        } else {
+            handled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        }
+        
+        return handled
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        let managedObjectContext = persistentContainer.viewContext
@@ -22,8 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        let totalUser = TotalUser(context: managedObjectContext)
 //         let user = TotalUser(context: managedObjectContext)
+        FirebaseApp.configure()
+        // Configure Facebook Login
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
+        // Configure Google Sign In
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
         return true
     }
@@ -102,34 +122,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-//extension DiaryUser {
-//    
-//    @objc(addUsersObject:)
-//    @NSManaged public func addToUser(_ value: TotalUser)
-//    
-//    @objc(removeUsersObject:)
-//    @NSManaged public func removeFromUser(_ value: TotalUser)
-//    
-//    @objc(addUsers:)
-//    @NSManaged public func addToUsers(_ values: NSSet)
-//    
-//    @objc(removeUsers:)
-//    @NSManaged public func removeFromUsers(_ values: NSSet)
-//    
-//}
-//extension TotalUser {
-//    
-//    @objc(addUsersObject:)
-//    @NSManaged public func addToUser(_ value: DiaryUser)
-//    
-//    @objc(removeUsersObject:)
-//    @NSManaged public func removeFromUser(_ value: DiaryUser)
-//    
-//    @objc(addUsers:)
-//    @NSManaged public func addToUsers(_ values: NSSet)
-//    
-//    @objc(removeUsers:)
-//    @NSManaged public func removeFromUsers(_ values: NSSet)
-//    
-//}
-//
