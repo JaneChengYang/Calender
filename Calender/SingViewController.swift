@@ -15,7 +15,15 @@ import FirebaseStorage
 import FirebaseAuth
 
 class SingViewController: UIViewController, GIDSignInDelegate,GIDSignInUIDelegate{
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil{
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Main"){
+                UIApplication.shared.keyWindow?.rootViewController = viewController
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil{
             return

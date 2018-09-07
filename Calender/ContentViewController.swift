@@ -8,11 +8,9 @@
 
 import UIKit
 import CoreData
-import Firebase
 
 class ContentViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     var user = ["美食","通勤","娛樂","電話","醫療","日常用品","飲料","其他"]
-    var ii = 1000
     @IBOutlet weak var myPickerView: UIPickerView!
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

@@ -32,48 +32,51 @@ class ShareViewController: UIViewController {
                 }
             }
         }else{
-            array.removeLast()
-            arrayCount = array.count - 1
-            nameLabel.text = array[arrayCount!]["user"] as! String
-            titleLabel.text = array[arrayCount!]["diaryWords"] as! String
-            dateLabel.text = array[arrayCount!]["date"] as! String
-            let weather = array[arrayCount!]["weatherImage"] as! String
-            if weather == ""{
-                self.weatherImage.image = UIImage(named: "18")
-            }else{
-                self.weatherImage.image = UIImage(named: weather)
-            }
-            let mood = array[arrayCount!]["moodImage"] as! String
-            if mood == ""{
-                self.moodImage.image = UIImage(named: "22")
-            }else{
-                self.moodImage.image = UIImage(named: mood)
-            }
-            currentTextView.text = array[arrayCount!]["diary"] as! String
-            
-            self.myImage.image = nil
-            let imageURL = array[arrayCount!]["imageFileURL"] as? String
-            if let image = CacheManager.shard.getFromCache(key: imageURL!) as? UIImage{
-                self.myImage.image = image
-                self.myImage.contentMode = .scaleToFill
-            }else{
-                if let url = URL(string: imageURL!){
-                    let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                        guard let imageData = data else{
-                            return
-                        }
-                        OperationQueue.main.addOperation {
-                            guard let image = UIImage(data: imageData) else{
+            DispatchQueue.main.async {
+                self.array.removeLast()
+                self.arrayCount = self.array.count - 1
+               self.nameLabel.text = self.array[self.arrayCount!]["user"] as! String
+                self.titleLabel.text = self.array[self.arrayCount!]["diaryWords"] as! String
+                self.dateLabel.text = self.array[self.arrayCount!]["date"] as! String
+                let weather = self.array[self.arrayCount!]["weatherImage"] as! String
+                if weather == ""{
+                    self.weatherImage.image = UIImage(named: "18")
+                }else{
+                    self.weatherImage.image = UIImage(named: weather)
+                }
+                let mood = self.array[self.arrayCount!]["moodImage"] as! String
+                if mood == ""{
+                    self.moodImage.image = UIImage(named: "22")
+                }else{
+                    self.moodImage.image = UIImage(named: mood)
+                }
+                self.currentTextView.text = self.array[self.arrayCount!]["diary"] as! String
+                
+                self.myImage.image = nil
+                let imageURL = self.array[self.arrayCount!]["imageFileURL"] as? String
+                if let image = CacheManager.shard.getFromCache(key: imageURL!) as? UIImage{
+                    self.myImage.image = image
+                    self.myImage.contentMode = .scaleToFill
+                }else{
+                    if let url = URL(string: imageURL!){
+                        let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                            guard let imageData = data else{
                                 return
                             }
-                            self.myImage.image = image
-                            self.myImage.contentMode = .scaleToFill
-                            CacheManager.shard.cache(object: image, key: imageURL!)
+                            OperationQueue.main.addOperation {
+                                guard let image = UIImage(data: imageData) else{
+                                    return
+                                }
+                                self.myImage.image = image
+                                self.myImage.contentMode = .scaleToFill
+                                CacheManager.shard.cache(object: image, key: imageURL!)
+                            }
                         }
+                        downloadTask.resume()
                     }
-                    downloadTask.resume()
                 }
             }
+
         }
     }
     @IBOutlet weak var nButton: UIButton!
@@ -87,7 +90,6 @@ class ShareViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
           read()
         rButton.layer.cornerRadius = rButton.frame.size.width / 2
         nButton.layer.cornerRadius = nButton.frame.size.width / 2
@@ -114,44 +116,46 @@ class ShareViewController: UIViewController {
         postDatabaseRef = postDatabaseRef.queryLimited(toLast: 1)
         postDatabaseRef.observeSingleEvent(of: .value) { (snapshot) in
             for item in snapshot.children.allObjects as! [DataSnapshot]{
-                let postInfo = item.value as? [String:Any] ?? [:]
-                self.nameLabel.text = postInfo["user"] as? String
-                self.titleLabel.text = postInfo["diaryWords"] as? String
-                self.dateLabel.text = postInfo["date"] as? String
-                let weather = postInfo["weatherImage"] as? String
-                if weather == ""{
-                    self.weatherImage.image = UIImage(named: "18")
-                }else{
-                    self.weatherImage.image = UIImage(named: weather!)
-                }
-                let mood = postInfo["moodImage"] as? String
-                if mood == ""{
-                    self.moodImage.image = UIImage(named: "22")
-                }else{
-                    self.moodImage.image = UIImage(named: mood!)
-                }
-                self.currentTextView.text = postInfo["diary"] as? String
-                self.myImage.image = nil
-                let imageURL = postInfo["imageFileURL"] as? String
-                if let image = CacheManager.shard.getFromCache(key: imageURL!) as? UIImage{
-                    self.myImage.image = image
-                    self.myImage.contentMode = .scaleToFill
-                }else{
-                    if let url = URL(string: imageURL!){
-                        let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                            guard let imageData = data else{
-                                return
-                            }
-                            OperationQueue.main.addOperation {
-                                guard let image = UIImage(data: imageData) else{
+                DispatchQueue.main.async {
+                    let postInfo = item.value as? [String:Any] ?? [:]
+                    self.nameLabel.text = postInfo["user"] as? String
+                    self.titleLabel.text = postInfo["diaryWords"] as? String
+                    self.dateLabel.text = postInfo["date"] as? String
+                    let weather = postInfo["weatherImage"] as? String
+                    if weather == ""{
+                        self.weatherImage.image = UIImage(named: "18")
+                    }else{
+                        self.weatherImage.image = UIImage(named: weather!)
+                    }
+                    let mood = postInfo["moodImage"] as? String
+                    if mood == ""{
+                        self.moodImage.image = UIImage(named: "22")
+                    }else{
+                        self.moodImage.image = UIImage(named: mood!)
+                    }
+                    self.currentTextView.text = postInfo["diary"] as? String
+                    self.myImage.image = nil
+                    let imageURL = postInfo["imageFileURL"] as? String
+                    if let image = CacheManager.shard.getFromCache(key: imageURL!) as? UIImage{
+                        self.myImage.image = image
+                        self.myImage.contentMode = .scaleToFill
+                    }else{
+                        if let url = URL(string: imageURL!){
+                            let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                                guard let imageData = data else{
                                     return
                                 }
-                                self.myImage.image = image
-                                self.myImage.contentMode = .scaleToFill
-                                CacheManager.shard.cache(object: image, key: imageURL!)
+                                OperationQueue.main.addOperation {
+                                    guard let image = UIImage(data: imageData) else{
+                                        return
+                                    }
+                                    self.myImage.image = image
+                                    self.myImage.contentMode = .scaleToFill
+                                    CacheManager.shard.cache(object: image, key: imageURL!)
+                                }
                             }
+                            downloadTask.resume()
                         }
-                        downloadTask.resume()
                     }
                 }
             }

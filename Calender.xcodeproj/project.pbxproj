@@ -20,6 +20,10 @@
 		F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441C6322103483B00E8CFDD /* PieChartViewController.swift */; };
 		F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45924EE20F3B00900DF434B /* ContentViewController.swift */; };
 		F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */; };
+		F4676A8B214278F300DFDFE8 /* SlideDownTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8A214278F300DFDFE8 /* SlideDownTransitionAnimator.swift */; };
+		F4676A8D2142790100DFDFE8 /* SlideRightTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8C2142790100DFDFE8 /* SlideRightTransitionAnimator.swift */; };
+		F4676A8F2142790E00DFDFE8 /* PopTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8E2142790E00DFDFE8 /* PopTransitionAnimator.swift */; };
+		F4676A912142792000DFDFE8 /* RotateTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A902142792000DFDFE8 /* RotateTransitionAnimator.swift */; };
 		F46C1AC1213677A100F51761 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C1AC0213677A100F51761 /* Service.swift */; };
 		F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F475FCA420F1FA4500824659 /* AddAccountViewController.swift */; };
 		F482BCF2213403CA00081B1C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482BCF1213403CA00081B1C /* ExchangeViewController.swift */; };
@@ -54,6 +58,10 @@
 		F45924EE20F3B00900DF434B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F45E19182111F84600C77EB3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4676A8A214278F300DFDFE8 /* SlideDownTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideDownTransitionAnimator.swift; sourceTree = "<group>"; };
+		F4676A8C2142790100DFDFE8 /* SlideRightTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideRightTransitionAnimator.swift; sourceTree = "<group>"; };
+		F4676A8E2142790E00DFDFE8 /* PopTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTransitionAnimator.swift; sourceTree = "<group>"; };
+		F4676A902142792000DFDFE8 /* RotateTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateTransitionAnimator.swift; sourceTree = "<group>"; };
 		F46C1AC0213677A100F51761 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F475FCA420F1FA4500824659 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		F482BCF1213403CA00081B1C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 		F439407220B3044900662113 = {
 			isa = PBXGroup;
 			children = (
+				F4676A89214278D100DFDFE8 /* Animated */,
 				F439407D20B3044900662113 /* Calender */,
 				F439407C20B3044900662113 /* Products */,
 				A95BF5079E5F1BCD9F32FC9B /* Pods */,
@@ -150,6 +159,17 @@
 				F4E4652F20D0C52900948CEA /* Calender.xcdatamodeld */,
 			);
 			path = Calender;
+			sourceTree = "<group>";
+		};
+		F4676A89214278D100DFDFE8 /* Animated */ = {
+			isa = PBXGroup;
+			children = (
+				F4676A8A214278F300DFDFE8 /* SlideDownTransitionAnimator.swift */,
+				F4676A8C2142790100DFDFE8 /* SlideRightTransitionAnimator.swift */,
+				F4676A8E2142790E00DFDFE8 /* PopTransitionAnimator.swift */,
+				F4676A902142792000DFDFE8 /* RotateTransitionAnimator.swift */,
+			);
+			path = Animated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +331,7 @@
 			files = (
 				F439408120B3044900662113 /* ViewController.swift in Sources */,
 				F420E11520B3091600C6B90C /* CustomCell.swift in Sources */,
+				F4676A912142792000DFDFE8 /* RotateTransitionAnimator.swift in Sources */,
 				F4F6541C212C63570079D908 /* AccountViewController.swift in Sources */,
 				F4F6541A212C5A190079D908 /* UserViewController.swift in Sources */,
 				F4EF89A52134F4BE00F5A6B1 /* UIImage+Scale.swift in Sources */,
@@ -318,6 +339,7 @@
 				F4E4653120D0C52A00948CEA /* Calender.xcdatamodeld in Sources */,
 				F482BCF82134470700081B1C /* ShareViewController.swift in Sources */,
 				F42BC48B20E5211B000E159E /* AddDiaryViewController.swift in Sources */,
+				F4676A8B214278F300DFDFE8 /* SlideDownTransitionAnimator.swift in Sources */,
 				F439407F20B3044900662113 /* AppDelegate.swift in Sources */,
 				F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */,
 				F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */,
@@ -326,9 +348,11 @@
 				F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */,
 				F42CCA6D212FED8D008E786E /* CacheManager.swift in Sources */,
 				F49D0CF7212ABDD400564EB1 /* SingViewController.swift in Sources */,
+				F4676A8D2142790100DFDFE8 /* SlideRightTransitionAnimator.swift in Sources */,
 				F482BCF4213403E600081B1C /* ExchangeEditViewController.swift in Sources */,
 				F42BC48920E520EA000E159E /* DiaryViewController.swift in Sources */,
 				F46C1AC1213677A100F51761 /* Service.swift in Sources */,
+				F4676A8F2142790E00DFDFE8 /* PopTransitionAnimator.swift in Sources */,
 				F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */,
 				F482BCF2213403CA00081B1C /* ExchangeViewController.swift in Sources */,
 			);

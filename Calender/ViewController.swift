@@ -11,6 +11,10 @@ import JTAppleCalendar
 import CoreData
 
 class ViewController: UIViewController{
+    let slideDown = SlideDownTransitionAnimator()
+    let slideRight = SlideRightTransitionAnimator()
+    let popTransition = PopTransitionAnimator()
+    let rotateTransition = RotateTransitionAnimator()
     var diary = [DiaryUser]()
     var date = Date()
     //判斷滾動時total用
@@ -30,7 +34,18 @@ class ViewController: UIViewController{
     @IBOutlet weak var calenderView: JTAppleCalendarView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
-    
+    @IBAction func shareButton(_ sender: UIButton) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "share"){
+            controller.transitioningDelegate = slideDown
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    @IBAction func userButton(_ sender: UIButton) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "user"){
+            controller.transitioningDelegate = slideDown
+            present(controller, animated: true, completion: nil)
+        }
+    }
     //返回頁面
     @IBAction func unwind(segue:UIStoryboardSegue){
     }
@@ -125,6 +140,7 @@ extension ViewController:JTAppleCalendarViewDelegate{
                     cell?.bounce()
                     handleCellTextColor(view: cell, cellState: cellState)
                     handleCellSelected(view: cell, cellState: cellState)
+                    controller.transitioningDelegate = rotateTransition
                     present(controller, animated: true, completion: nil)
                     break
                 }
@@ -133,6 +149,7 @@ extension ViewController:JTAppleCalendarViewDelegate{
         guard let controller = storyboard?.instantiateViewController(withIdentifier: "addDiary") as? AddDiaryViewController else{fatalError()}
         //把我點選的日期傳出去
         controller.date = formatter.string(from: date)
+        controller.transitioningDelegate = rotateTransition
         present(controller, animated: true, completion: nil)
         cell?.bounce()
         handleCellTextColor(view: cell, cellState: cellState)

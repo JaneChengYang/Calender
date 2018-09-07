@@ -294,7 +294,7 @@
                                 </constraints>
                                 <state key="normal" image="42"/>
                                 <connections>
-                                    <segue destination="D0r-Cc-TB8" kind="show" id="6NW-jX-vUN"/>
+                                    <action selector="userButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hYW-Tk-WWR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liw-b6-jOe">
@@ -305,7 +305,7 @@
                                 </constraints>
                                 <state key="normal" image="43"/>
                                 <connections>
-                                    <segue destination="gAo-8K-D6g" kind="show" id="QAK-yb-Fnk"/>
+                                    <action selector="shareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDE-bz-AFI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -557,11 +557,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-ll-6Ma">
-                                <rect key="frame" x="0.0" y="233" width="375" height="434"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-ll-6Ma">
+                                <rect key="frame" x="0.0" y="234" width="375" height="438"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g8f-qk-rJE">
-                                        <rect key="frame" x="8" y="284" width="359" height="143"/>
+                                        <rect key="frame" x="8" y="284" width="359" height="142.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1127,7 +1127,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5177" y="826"/>
+            <point key="canvasLocation" x="5176.8000000000002" y="825.33733133433293"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="ONw-US-w8b">
@@ -2551,7 +2551,7 @@
         <!--User View Controller-->
         <scene sceneID="mvH-Ho-BUr">
             <objects>
-                <viewController id="D0r-Cc-TB8" customClass="UserViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="user" id="D0r-Cc-TB8" customClass="UserViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ln-tX-IoR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3300,7 +3300,7 @@
         <!--Share View Controller-->
         <scene sceneID="LN6-FQ-em7">
             <objects>
-                <viewController id="gAo-8K-D6g" customClass="ShareViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="share" id="gAo-8K-D6g" customClass="ShareViewController" customModule="Calender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpc-1W-0cx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
