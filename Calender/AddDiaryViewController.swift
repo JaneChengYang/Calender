@@ -51,7 +51,7 @@ class AddDiaryViewController: UIViewController,UIImagePickerControllerDelegate,U
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             myImage.image = image
             myImage.contentMode = .scaleToFill
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         dismiss(animated: true, completion: nil)
     }

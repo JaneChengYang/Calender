@@ -552,7 +552,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用一句話形容今天吧！" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-WY-AIM">
-                                <rect key="frame" x="15" y="159" width="164" height="30"/>
+                                <rect key="frame" x="15" y="159.5" width="164" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1079,7 +1079,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018/06/27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgU-9p-Esu">
-                                <rect key="frame" x="15" y="194" width="107" height="24"/>
+                                <rect key="frame" x="15" y="194.5" width="107" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2579,19 +2579,6 @@
                                     <action selector="SignOutButton:" destination="D0r-Cc-TB8" eventType="touchUpInside" id="FEC-uY-oP2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1r-ft-Hda">
-                                <rect key="frame" x="137" y="101" width="100" height="60"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="39" translatesAutoresizingMaskIntoConstraints="NO" id="qDU-Rh-oqg">
-                                <rect key="frame" x="16" y="20" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="I9F-Q4-eRQ"/>
-                                    <constraint firstAttribute="height" constant="90" id="yTM-cy-659"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lif-sd-l1E">
                                 <rect key="frame" x="111" y="225" width="153" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
@@ -2634,14 +2621,19 @@
                                     <segue destination="A0Y-4T-qVz" kind="show" id="u2I-WX-AG9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="39" translatesAutoresizingMaskIntoConstraints="NO" id="qDU-Rh-oqg">
+                                <rect key="frame" x="127" y="82" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="TIT-XL-EKc"/>
+                                    <constraint firstAttribute="height" constant="120" id="oVQ-fc-3ny"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IdI-Ir-hWt" firstAttribute="top" secondItem="7Ln-tX-IoR" secondAttribute="top" id="1vh-cE-wkX"/>
-                            <constraint firstItem="T1r-ft-Hda" firstAttribute="centerX" secondItem="7Ln-tX-IoR" secondAttribute="centerX" id="37y-VZ-ac8"/>
                             <constraint firstItem="Jzg-RL-kCc" firstAttribute="trailing" secondItem="4lm-Zf-lL1" secondAttribute="trailing" constant="26" id="4NZ-jp-Yab"/>
                             <constraint firstItem="IdI-Ir-hWt" firstAttribute="trailing" secondItem="Jzg-RL-kCc" secondAttribute="trailing" id="6a1-Ja-gTB"/>
-                            <constraint firstItem="qDU-Rh-oqg" firstAttribute="top" secondItem="Jzg-RL-kCc" secondAttribute="top" id="92t-qH-5Su"/>
                             <constraint firstItem="fRm-cY-IhI" firstAttribute="centerX" secondItem="7Ln-tX-IoR" secondAttribute="centerX" id="AVX-t7-oQN"/>
                             <constraint firstItem="Jzg-RL-kCc" firstAttribute="trailing" secondItem="dhq-eQ-yWR" secondAttribute="trailing" constant="15" id="H2Q-Or-oNV"/>
                             <constraint firstItem="IdI-Ir-hWt" firstAttribute="leading" secondItem="Jzg-RL-kCc" secondAttribute="leading" id="Ovg-Ca-3W2"/>
@@ -2649,14 +2641,14 @@
                             <constraint firstItem="4lm-Zf-lL1" firstAttribute="top" secondItem="OFZ-fn-PQU" secondAttribute="bottom" constant="8" id="YzG-Qp-tcW"/>
                             <constraint firstItem="4lm-Zf-lL1" firstAttribute="leading" secondItem="Jzg-RL-kCc" secondAttribute="leading" constant="26" id="ZK2-zF-RUs"/>
                             <constraint firstItem="OFZ-fn-PQU" firstAttribute="leading" secondItem="Jzg-RL-kCc" secondAttribute="leading" constant="26" id="Zih-O3-TB3"/>
-                            <constraint firstItem="qDU-Rh-oqg" firstAttribute="leading" secondItem="Jzg-RL-kCc" secondAttribute="leading" constant="16" id="aNA-O1-9kv"/>
                             <constraint firstItem="fRm-cY-IhI" firstAttribute="top" secondItem="lif-sd-l1E" secondAttribute="bottom" constant="21" id="anS-ct-txN"/>
                             <constraint firstItem="Jzg-RL-kCc" firstAttribute="bottom" secondItem="4lm-Zf-lL1" secondAttribute="bottom" constant="97" id="hA7-Fw-Q92"/>
                             <constraint firstItem="Jzg-RL-kCc" firstAttribute="trailing" secondItem="OFZ-fn-PQU" secondAttribute="trailing" constant="26" id="nJM-D9-9FQ"/>
-                            <constraint firstItem="T1r-ft-Hda" firstAttribute="top" secondItem="Jzg-RL-kCc" secondAttribute="top" constant="81" id="p11-5Z-Wtr"/>
                             <constraint firstItem="dhq-eQ-yWR" firstAttribute="top" secondItem="Jzg-RL-kCc" secondAttribute="top" id="qBf-hL-biB"/>
+                            <constraint firstItem="fRm-cY-IhI" firstAttribute="centerY" secondItem="IdI-Ir-hWt" secondAttribute="centerY" id="qWL-pt-Dqz"/>
                             <constraint firstItem="lif-sd-l1E" firstAttribute="centerX" secondItem="7Ln-tX-IoR" secondAttribute="centerX" id="qha-1B-qFg"/>
-                            <constraint firstItem="lif-sd-l1E" firstAttribute="top" secondItem="T1r-ft-Hda" secondAttribute="bottom" constant="64" id="y92-27-xHr"/>
+                            <constraint firstItem="qDU-Rh-oqg" firstAttribute="centerX" secondItem="7Ln-tX-IoR" secondAttribute="centerX" id="rXh-Pb-Xv7"/>
+                            <constraint firstItem="qDU-Rh-oqg" firstAttribute="top" secondItem="Jzg-RL-kCc" secondAttribute="top" constant="62" id="u5h-ZP-7qp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jzg-RL-kCc"/>
                     </view>

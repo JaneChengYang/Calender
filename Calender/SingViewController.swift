@@ -20,7 +20,7 @@ class SingViewController: UIViewController, GIDSignInDelegate,GIDSignInUIDelegat
         if Auth.auth().currentUser != nil{
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Main"){
                 UIApplication.shared.keyWindow?.rootViewController = viewController
-                self.dismiss(animated: true, completion: nil)
+               // self.dismiss(animated: true, completion: nil)
             }
         }
     }
