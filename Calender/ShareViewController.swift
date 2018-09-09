@@ -14,6 +14,7 @@ class ShareViewController: UIViewController {
     var array:[[String:Any]] = []
     var arrayCount:Int?
     var post:[Post] = []
+    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var moodImage: UIImageView!
     @IBOutlet weak var weatherImage: UIImageView!
@@ -93,6 +94,7 @@ class ShareViewController: UIViewController {
           read()
         rButton.layer.cornerRadius = rButton.frame.size.width / 2
         nButton.layer.cornerRadius = nButton.frame.size.width / 2
+        messageButton.layer.cornerRadius = messageButton.frame.size.width / 2
     }
     override func viewDidLoad() {
         super.viewDidLoad()

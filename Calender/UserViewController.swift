@@ -17,6 +17,7 @@ import GoogleSignIn
 
 
 class UserViewController: UIViewController {
+    
     var diary = [DiaryUser]()
     @IBOutlet weak var uidLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -106,7 +107,7 @@ class UserViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             return
         }
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "One"){
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "email"){
             UIApplication.shared.keyWindow?.rootViewController = viewController
             self.dismiss(animated: true, completion: nil)
         }

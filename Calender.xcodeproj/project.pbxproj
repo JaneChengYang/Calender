@@ -20,6 +20,9 @@
 		F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F441C6322103483B00E8CFDD /* PieChartViewController.swift */; };
 		F45924EF20F3B00900DF434B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45924EE20F3B00900DF434B /* ContentViewController.swift */; };
 		F460AB0520E2890700676EC2 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */; };
+		F4673C9D2144C4EC005E3AA5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4673C9C2144C4EC005E3AA5 /* MessageViewController.swift */; };
+		F4673C9F2144C51F005E3AA5 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4673C9E2144C51F005E3AA5 /* MessageCollectionViewCell.swift */; };
+		F4673CA121451AAE005E3AA5 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4673CA021451AAE005E3AA5 /* EmailViewController.swift */; };
 		F4676A8B214278F300DFDFE8 /* SlideDownTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8A214278F300DFDFE8 /* SlideDownTransitionAnimator.swift */; };
 		F4676A8D2142790100DFDFE8 /* SlideRightTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8C2142790100DFDFE8 /* SlideRightTransitionAnimator.swift */; };
 		F4676A8F2142790E00DFDFE8 /* PopTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4676A8E2142790E00DFDFE8 /* PopTransitionAnimator.swift */; };
@@ -58,6 +61,9 @@
 		F45924EE20F3B00900DF434B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F45E19182111F84600C77EB3 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F460AB0420E2890700676EC2 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4673C9C2144C4EC005E3AA5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		F4673C9E2144C51F005E3AA5 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4673CA021451AAE005E3AA5 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		F4676A8A214278F300DFDFE8 /* SlideDownTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideDownTransitionAnimator.swift; sourceTree = "<group>"; };
 		F4676A8C2142790100DFDFE8 /* SlideRightTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideRightTransitionAnimator.swift; sourceTree = "<group>"; };
 		F4676A8E2142790E00DFDFE8 /* PopTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -152,6 +158,9 @@
 				F482BCF5213407F800081B1C /* CloudViewController.swift */,
 				F482BCF72134470700081B1C /* ShareViewController.swift */,
 				F4EF89A42134F4BE00F5A6B1 /* UIImage+Scale.swift */,
+				F4673C9C2144C4EC005E3AA5 /* MessageViewController.swift */,
+				F4673C9E2144C51F005E3AA5 /* MessageCollectionViewCell.swift */,
+				F4673CA021451AAE005E3AA5 /* EmailViewController.swift */,
 				F439408520B3044A00662113 /* Assets.xcassets */,
 				F439408720B3044A00662113 /* LaunchScreen.storyboard */,
 				F439408A20B3044A00662113 /* Info.plist */,
@@ -330,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F439408120B3044900662113 /* ViewController.swift in Sources */,
+				F4673C9D2144C4EC005E3AA5 /* MessageViewController.swift in Sources */,
 				F420E11520B3091600C6B90C /* CustomCell.swift in Sources */,
 				F4676A912142792000DFDFE8 /* RotateTransitionAnimator.swift in Sources */,
 				F4F6541C212C63570079D908 /* AccountViewController.swift in Sources */,
@@ -342,8 +352,10 @@
 				F4676A8B214278F300DFDFE8 /* SlideDownTransitionAnimator.swift in Sources */,
 				F439407F20B3044900662113 /* AppDelegate.swift in Sources */,
 				F441C6332103483B00E8CFDD /* PieChartViewController.swift in Sources */,
+				F4673C9F2144C51F005E3AA5 /* MessageCollectionViewCell.swift in Sources */,
 				F4F44E6C20EFC42200C6EC7D /* EditViewController.swift in Sources */,
 				F482BCF6213407F800081B1C /* CloudViewController.swift in Sources */,
+				F4673CA121451AAE005E3AA5 /* EmailViewController.swift in Sources */,
 				F4AF1D69212D132100FEB506 /* CurrentUser.swift in Sources */,
 				F475FCA520F1FA4500824659 /* AddAccountViewController.swift in Sources */,
 				F42CCA6D212FED8D008E786E /* CacheManager.swift in Sources */,
