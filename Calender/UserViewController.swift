@@ -132,6 +132,7 @@ class UserViewController: UIViewController {
         if let curr = Auth.auth().currentUser{
             nameLabel.text = curr.displayName
             emailLabel.text = curr.email
+            
         }
 
         // Do any additional setup after loading the view.

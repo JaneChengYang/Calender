@@ -11,6 +11,7 @@ import JTAppleCalendar
 import CoreData
 
 class ViewController: UIViewController{
+    let database = 0
     let slideDown = SlideDownTransitionAnimator()
     let slideRight = SlideRightTransitionAnimator()
     let popTransition = PopTransitionAnimator()

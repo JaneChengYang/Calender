@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class EmailViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    let database = 0
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil{
@@ -39,12 +40,9 @@ class EmailViewController: UIViewController,UIImagePickerControllerDelegate,UINa
                 
                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
-                    
                     if error == nil {
-                        
                         // 解除鍵盤
                         self.view.endEditing(true)
-                        
                         // 返回登入畫面
                         if let navController = self.navigationController {
                             navController.popViewController(animated: true)
@@ -235,20 +233,17 @@ class EmailViewController: UIViewController,UIImagePickerControllerDelegate,UINa
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
     }
-    func share(){
-        let postDatabaseRef = Database.database().reference().child("userPosts").childByAutoId()
-        let imageStorageRef = Storage.storage().reference().child("userPosts").child("\(postDatabaseRef.key).jpg")
-        let scaledImage = myButton.imageView?.image?.scale(newWidth: 640.0)
-        guard let imageData = UIImageJPEGRepresentation(scaledImage!, 0.9) else {
-            return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? ViewController{
+             let postDatabaseRef = Database.database().reference().child("userPosts")
+            postDatabaseRef.observeSingleEvent(of: .value) { (snapshot) in
+               let snapshorArroy = snapshot.children.allObjects as! [DataSnapshot]
+                //snapshorArroy.firstIndex
+                    
+                
+            }
+            controller.database
         }
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpg"
-        let uploadTask = imageStorageRef.putData(imageData, metadata: metadata)
-        uploadTask.observe(.success) { (snapshot) in
-            
-        }
-        
     }
 
 }
